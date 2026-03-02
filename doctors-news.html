@@ -1,532 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="31d71665-7827-44ae-934b-7f68bc397123"></script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Doctors News | Subjects Online</title>
-  <meta name="description" content="Doctor-announced essay questions and exam questions with exact dates — never miss what your professor said."/>
-  <link rel="stylesheet" href="styles/main.css"/>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K8RPX2BHDW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-K8RPX2BHDW');
-</script>
-  <style>
-    /* ── Page Hero ─────────────────────────────────── */
-    .dn-hero {
-      padding: 3.5rem 2rem 2rem;
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .dn-hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem,6vw,3.5rem);
-      font-weight: 900;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, #60a5fa, #8b5cf6, #f472b6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.75rem;
-    }
-    .dn-hero p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
-
-    /* ── Tabs ──────────────────────────────────────── */
-    .dn-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 1.5rem 2rem 0;
-    }
-    .dn-tab {
-      padding: 0.65rem 1.75rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.9rem;
-      font-weight: 600;
-      border: 1px solid var(--glass-border);
-      background: var(--glass);
-      color: var(--text-secondary);
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .dn-tab.active {
-      background: rgba(139,92,246,0.15);
-      border-color: rgba(139,92,246,0.35);
-      color: var(--accent-purple);
-    }
-    .dn-tab:hover:not(.active) { background: var(--bg-card-hover); color: var(--text-primary); }
-
-    /* ── Main Layout ───────────────────────────────── */
-    .dn-layout {
-      display: grid;
-      grid-template-columns: 1fr 280px;
-      gap: 1.5rem;
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem 4rem;
-    }
-    @media (max-width: 900px) {
-      .dn-layout { grid-template-columns: 1fr; }
-      .dn-sidebar { order: -1; }
-    }
-
-    /* ── Filter Sidebar ────────────────────────────── */
-    .dn-sidebar {
-      position: sticky;
-      top: 88px;
-      align-self: start;
-    }
-    .sidebar-card {
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .sidebar-card h3 {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-    }
-    .filter-btn {
-      width: 100%;
-      text-align: left;
-      padding: 0.55rem 0.85rem;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.25rem;
-    }
-    .filter-btn:hover { color: var(--text-primary); background: var(--glass); }
-    .filter-btn.active { color: var(--accent-purple); background: rgba(139,92,246,0.1); }
-
-    /* ── News Cards ─────────────────────────────────── */
-    .dn-panel { display: none; }
-    .dn-panel.active { display: block; }
-    .dn-cards { display: flex; flex-direction: column; gap: 1rem; }
-
-    .dn-card {
-      background: var(--bg-card);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-    .dn-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      border-radius: 2px;
-    }
-    .dn-card.essay::before { background: #f472b6; }
-    .dn-card.questions::before { background: #60a5fa; }
-    .dn-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--glass-border-hover);
-      transform: translateY(-2px);
-    }
-    .dn-card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    .dn-card-subject {
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-pill);
-    }
-    .dn-card-date {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .dn-card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
-    .dn-card-body {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-    .dn-card-footer {
-      margin-top: 1rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .dn-card-type {
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .dn-card-type.essay { color: #f472b6; }
-    .dn-card-type.questions { color: #60a5fa; }
-    .dn-card-doctor { font-size: 0.75rem; color: var(--text-muted); }
-
-    /* Subject colors for badges */
-    .subj-accounting { background: rgba(244,114,182,0.15); color: #f472b6; }
-    .subj-ais { background: rgba(139,92,246,0.15); color: #8b5cf6; }
-    .subj-economics { background: rgba(52,211,153,0.15); color: #34d399; }
-    .subj-marketing { background: rgba(251,146,60,0.15); color: #fb923c; }
-    .subj-political { background: rgba(96,165,250,0.15); color: #60a5fa; }
-    .subj-english { background: rgba(251,191,36,0.15); color: #fbbf24; }
-    .subj-statistics { background: rgba(167,139,250,0.15); color: #a78bfa; }
-
-    /* ── Add Form ────────────────────────────────────── */
-    .add-btn-wrap { margin-bottom: 1.5rem; display: flex; justify-content: flex-end; }
-    .add-btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.65rem 1.4rem;
-      border-radius: var(--radius-pill);
-      background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-      color: #fff; font-size: 0.875rem; font-weight: 600;
-      transition: var(--transition);
-      box-shadow: 0 0 20px rgba(139,92,246,0.3);
-    }
-    .add-btn:hover { transform: translateY(-2px); box-shadow: 0 0 35px rgba(139,92,246,0.5); }
-
-    /* ── Add Modal ─────────────────────────────────── */
-    .add-modal-overlay {
-      display: none;
-      position: fixed; inset: 0; z-index: 300;
-      background: rgba(5,6,15,0.92);
-      backdrop-filter: blur(20px);
-      align-items: center; justify-content: center; padding: 1rem;
-    }
-    .add-modal-overlay.active { display: flex; }
-    .add-modal {
-      width: min(560px, 100%);
-      background: #0d0f1e;
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 2rem;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.7);
-    }
-    .add-modal h2 { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--glass-border);
-      background: rgba(255,255,255,0.04);
-      color: var(--text-primary);
-      font-size: 0.9rem;
-      outline: none;
-      transition: var(--transition);
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--accent-purple); box-shadow: 0 0 0 3px rgba(139,92,246,0.15);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-group select option { background: #0d0f1e; }
-    .form-btns { display: flex; gap: 0.75rem; margin-top: 1.5rem; justify-content: flex-end; }
-    .form-cancel { padding: 0.65rem 1.4rem; border-radius: var(--radius-pill); border: 1px solid var(--glass-border); background: var(--glass); color: var(--text-secondary); font-size: 0.875rem; font-weight: 500; transition: var(--transition); }
-    .form-cancel:hover { border-color: var(--glass-border-hover); color: var(--text-primary); }
-
-    /* ── Empty ─────────────────────────────────────── */
-    @media (max-width: 600px) {
-      .dn-tabs { padding: 1rem; flex-wrap: wrap; }
-      .dn-layout { padding: 0 1rem 3rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors News - Subjects Online</title>
+    <link rel="stylesheet" href="styles/Doctors-news.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
 </head>
-<body>
-  <canvas id="starfield-canvas"></canvas>
-  <div class="orb orb-1"></div><div class="orb orb-2"></div>
-
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo"><span>📚</span> Subjects Online</a>
-    <div class="nav-links">
-      <a href="index.html"><span class="icon">🏠</span> Home</a>
-      <a href="doctors-news.html" class="active"><span class="icon"></span> Doctors News</a>
-      <a href="Favorites.html" class="nav-favorites-btn"><span class="icon">⭐</span> Favorites</a>
-    </div>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </nav>
-  <div class="mobile-nav" id="mobile-nav">
-    <a href="index.html">🏠 Home</a>
-    <a href="doctors-news.html"> Doctors News</a>
-    <a href="Favorites.html">⭐ Favorites</a>
-  </div>
-
-  <main class="page-wrapper">
-    <div class="dn-hero">
-      <div class="hero-eyebrow" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 1.2rem;border-radius:999px;border:1px solid rgba(139,92,246,0.3);background:rgba(139,92,246,0.08);font-size:0.8rem;font-weight:600;color:#8b5cf6;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem;">
-         Professor Announcements
-      </div>
-      <h1>Doctors News</h1>
-      <p>Everything your professor mentioned that will be in the exam — essay questions and objective questions, dated and tracked.</p>
-    </div>
-
-    <!-- Tabs -->
-    <div class="dn-tabs">
-      <button class="dn-tab active" data-dn-tab="essay" id="dn-tab-essay">
-        📝 Essay Questions
-      </button>
-      <button class="dn-tab" data-dn-tab="questions" id="dn-tab-questions">
-        ❓ Questions & Exams
-      </button>
-    </div>
-
-    <!-- Main Layout -->
-    <div class="dn-layout">
-      <!-- Cards column -->
-      <div>
-        <!-- Add button -->
-        <!-- <div class="add-btn-wrap">
-          <button class="add-btn" id="open-add-modal">+ Add News</button>
-        </div> -->
-
-        <!-- Essay panel -->
-        <div class="dn-panel active" id="dn-panel-essay">
-          <div class="dn-cards" id="essay-cards"></div>
-          <div class="empty-state" id="essay-empty" style="display:none;">
-            <span class="empty-icon">📝</span>
-            <h3>No Essay Questions Yet</h3>
-            <p>Add essay questions your doctor mentioned during lectures.</p>
-          </div>
+<body">
+    <div class="container" >
+        <!-- Back Button -->
+        <a href="index.html#subjects" class="back-button">
+            <!-- <i class="fas fa-arrow-right"></i> -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Subjects
+      </a>
+        <!-- Subject Header -->
+        <header class="subject-header">
+            <h1 style="margin: 0;">Doctors News</h1>
+        </header> 
+        
+        <!-- Section Tabs -->
+        <div class="section-tabs">
+            <button class="tab-btn active" onclick="showSection('theory')">
+                <i class="fas fa-book-open"></i>
+                Essay
+            </button>
+            <button class="tab-btn" onclick="showSection('exams')">
+                <i class="fas fa-question-circle"></i>
+                Questions And Exams
+            </button>
         </div>
 
-        <!-- Questions panel -->
-        <div class="dn-panel" id="dn-panel-questions">
-          <div class="dn-cards" id="question-cards"></div>
-          <div class="empty-state" id="question-empty" style="display:none;">
-            <span class="empty-icon">❓</span>
-            <h3>No Questions Yet</h3>
-            <p>Add questions and exam hints your doctor mentioned.</p>
-          </div>
-        </div>
-      </div>
+        <!-- Theory Section -->
+        <div id="theory-section" class="content-section active">
+            <div class="essay-container">
+                <div class="essay-header">
+                    <h2>Essay</h2>
+                </div>
+                
+                <div class="subjects-grid">
+                    <!-- Accounting -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-calculator"></i>
+                            Accounting
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of Accounting </span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
 
-      <!-- Sidebar -->
-      <aside class="dn-sidebar">
-        <div class="sidebar-card">
-          <h3>Filter by Subject</h3>
-          <button class="filter-btn active" data-filter="all">📚 All Subjects</button>
-          <button class="filter-btn" data-filter="accounting">📊 Accounting</button>
-          <button class="filter-btn" data-filter="ais">💻 AIS</button>
-          <button class="filter-btn" data-filter="economics">📈 Economics</button>
-          <button class="filter-btn" data-filter="marketing">📣 Marketing</button>
-          <button class="filter-btn" data-filter="political">🏛️ Political Science</button>
-          <button class="filter-btn" data-filter="english">✍️ English</button>
-          <button class="filter-btn" data-filter="statistics">📉 Statistics</button>
-          <button class="filter-btn" data-filter="puplic">🏛️ Public-Finance</button>
+                    <!-- Micro Economics -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-chart-line"></i>
+                            Micro Economics
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of Economics</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-bullhorn"></i>
+                            Marketing
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of Marketing</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- English -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-book"></i>
+                            English
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of English</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Statistics
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of Statistics</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AIS -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-laptop"></i>
+                            AIS
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of AIS</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Public Finance -->
+                    <div class="subject-card">
+                        <div class="subject-title">
+                            <i class="fas fa-university"></i>
+                            Public Finance
+                        </div>
+                        <div class="quote-box">
+                            <div class="quote-content">
+                                "Coming Soon..."
+                            </div>
+                            <div class="quote-meta">
+                                <div class="doctor-info">
+                                    <div class="doctor-avatar">...</div>
+                                    <div class="doctor-details">
+                                        <h4>Dr. ...</h4>
+                                        <span>Doctor of Finance</span>
+                                    </div>
+                                </div>
+                                <span class="quote-date">../../</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Political -->
+                        <div class="subject-card">
+                            <div style="color: black;" class="subject-title">
+                                <!-- <i class="fas fa-university"></i> -->
+                                Political Science
+                            </div>
+                            <div class="quote-box">
+                                <div class="quote-content">
+                                    "Coming Soon..."
+                                </div>
+                                <div class="quote-meta">
+                                    <div class="doctor-info">
+                                        <div class="doctor-avatar">...</div>
+                                        <div class="doctor-details">
+                                            <h4>Dr. ...</h4>
+                                            <span >Doctor of Political Science</span>
+                                        </div>
+                                    </div>
+                                    <span class="quote-date">../../</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
-        <div class="sidebar-card">
-          <h3>Summary</h3>
-          <div style="font-size:0.85rem;color:var(--text-muted);display:flex;flex-direction:column;gap:0.5rem;">
-            <div style="display:flex;justify-content:space-between;"><span>📝 Essay Q.</span><span id="essay-count" style="color:var(--accent-purple);font-weight:700;">0</span></div>
-            <div style="display:flex;justify-content:space-between;"><span>❓ Other Q.</span><span id="question-count" style="color:var(--accent-blue);font-weight:700;">0</span></div>
-          </div>
+
+        <!-- Exams Section -->
+        <div id="exams-section" class="content-section">
+            <div class="exams-container">
+                <div class="exams-header">
+                    <h2>Questions & Exams</h2>
+                </div>
+                
+                <div class="subjects-exams-grid">
+                    <!-- Accounting Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-calculator"></i>
+                            Accounting
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 1</span>
+                                    <span class="question-marks">(... Deg)</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q  : </strong></p>
+                                    <div class="expected-answer">
+                                        <strong>Answer : </strong> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 2</span>
+                                    <span class="question-marks">(... Deg)</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q : </strong></p>
+                                    <div class="expected-answer">
+                                        <strong>Answer : </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Micro Economics Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-chart-line"></i>
+                            Micro Economics
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Questions 1</span>
+                                    <span class="question-marks">(... Deg)</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q : </strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Questions 2</span>
+                                    <span class="question-marks">(... Deg)</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q : </strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-bullhorn"></i>
+                            Marketing
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 1</span>
+                                    <span class="question-marks">(... Deg)</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q : </strong></p>
+                                    <div class="expected-answer">
+                                        <strong>Answer : </strong>  
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="question-item">
+                            <div class="question-header">
+                                <span class="question-number">Question 2</span>
+                                <span class="question-marks">(... Deg)</span>
+                            </div>
+                            <div class="question-content">
+                                <p><strong>Q : </strong></p>
+                                <div class="expected-answer">
+                                    <strong>Answer : </strong>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- English Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-book"></i>
+                            English
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question  1</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong> Answer:</strong> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question  2</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong> Answer:</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Statistics
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question  1</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>ََQ :</strong></p>
+                                    <div class="expected-answer">
+                                        <strong> Answer :</strong> 
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="question-item">
+                            <div class="question-header">
+                                <span class="question-number">Question 2</span>
+                                <span class="question-marks">(... Deg )</span>
+                            </div>
+                            <div class="question-content">
+                                <p><strong>ََQ :</strong></p>
+                                <div class="expected-answer">
+                                    <strong> Answer :</strong>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- AIS Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-laptop"></i>
+                            AIS
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question  1</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 2</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Public Finance Questions -->
+                    <div class="subject-exams-card">
+                        <div class="subject-exams-title">
+                            <i class="fas fa-university"></i>
+                            Public Finance
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question  1</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 2</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Political Science Questions -->
+                    <div class="subject-exams-card">
+                        <div style="color: black;
+                        .subject-exams-card::before{
+                            content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 25px 25px 0 0;
+                        }" class="subject-exams-title">
+                            Political Science
+                        </div>
+                        <div class="questions-grid">
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 1</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="question-item">
+                                <div class="question-header">
+                                    <span class="question-number">Question 2</span>
+                                    <span class="question-marks">(... Deg )</span>
+                                </div>
+                                <div class="question-content">
+                                    <p><strong>Q :</strong> </p>
+                                    <div class="expected-answer">
+                                        <strong>Answer :</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </aside>
     </div>
-  </main>
 
+    <script>
+        // Enhanced Tab switching function
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            const targetSection = document.getElementById(sectionName + '-section');
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
 
+        // Add smooth scrolling and interactive features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
 
-  <!-- Add Modal -->
-  <div class="add-modal-overlay" id="add-modal-overlay">
-    <div class="add-modal">
-      <h2>➕ Add Doctor's News</h2>
-      <div class="form-group">
-        <label>Type</label>
-        <select id="dn-type">
-          <option value="essay">📝 Essay Question</option>
-          <option value="questions">❓ Question / Exam Hint</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Subject</label>
-        <select id="dn-subject">
-          <option value="accounting">📊 Accounting</option>
-          <option value="ais">💻 AIS</option>
-          <option value="economics">📈 Economics</option>
-          <option value="marketing">📣 Marketing</option>
-          <option value="political">🏛️ Political Science</option>
-          <option value="english">✍️ English</option>
-          <option value="statistics">📉 Statistics</option>
-          <option value="public-finance">🏛️ Public-Finance</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Title / Question</label>
-        <input type="text" id="dn-title" placeholder="e.g. Explain the accounting cycle…" />
-      </div>
-      <div class="form-group">
-        <label>Details (optional)</label>
-        <textarea id="dn-body" placeholder="Additional context, sub-questions, hints…"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Doctor Name</label>
-        <input type="text" id="dn-doctor" placeholder="e.g. Dr. Ahmed" />
-      </div>
-      <div class="form-btns">
-        <button class="form-cancel" id="close-add-modal">Cancel</button>
-        <button class="btn-primary" id="save-dn-item">Save</button>
-      </div>
-    </div>
-  </div>
+            document.querySelectorAll('.subject-card, .subject-exams-card').forEach(card => {
+                observer.observe(card);
+            });
 
-  <div id="toast-container" class="toast-container"></div>
-
-  <script src="scripts/main.js"></script>
-  <script>
-    const DN_KEY = 'so_doctors_news';
-
-    function loadItems() {
-      try { return JSON.parse(localStorage.getItem(DN_KEY)) || []; } catch { return []; }
-    }
-    function saveItems(items) { localStorage.setItem(DN_KEY, JSON.stringify(items)); }
-
-    const SUBJECT_MAP = {
-      accounting: { label: 'Accounting', icon: '📊', cls: 'subj-accounting' },
-      ais:        { label: 'AIS',        icon: '💻', cls: 'subj-ais' },
-      economics:  { label: 'Economics',  icon: '📈', cls: 'subj-economics' },
-      marketing:  { label: 'Marketing',  icon: '📣', cls: 'subj-marketing' },
-      political:  { label: 'Political Science', icon: '🏛️', cls: 'subj-political' },
-      english:    { label: 'English',    icon: '✍️', cls: 'subj-english' },
-      statistics: { label: 'Statistics', icon: '📉', cls: 'subj-statistics' },
-      puplic: { label: 'Public-Finance', icon: '🏛️', cls: 'subj-puplic' }
-    };
-
-    let activeTab = 'essay';
-    let activeFilter = 'all';
-
-    function formatDate(iso) {
-      const d = new Date(iso);
-      return d.toLocaleDateString('en-GB', { day:'2-digit', month:'long', year:'numeric' });
-    }
-
-    function renderCards() {
-      const items = loadItems();
-      const essayItems = items.filter(i => i.type === 'essay' && (activeFilter === 'all' || i.subject === activeFilter));
-      const questionItems = items.filter(i => i.type === 'questions' && (activeFilter === 'all' || i.subject === activeFilter));
-
-      document.getElementById('essay-count').textContent = items.filter(i=>i.type==='essay').length;
-      document.getElementById('question-count').textContent = items.filter(i=>i.type==='questions').length;
-
-      renderList('essay-cards', 'essay-empty', essayItems);
-      renderList('question-cards', 'question-empty', questionItems);
-    }
-
-    function renderList(containerId, emptyId, items) {
-      const container = document.getElementById(containerId);
-      const empty = document.getElementById(emptyId);
-      container.innerHTML = '';
-      if (items.length === 0) { empty.style.display = 'block'; return; }
-      empty.style.display = 'none';
-      items.forEach(item => {
-        const sub = SUBJECT_MAP[item.subject] || { label: item.subject, icon: '📚', cls: '' };
-        const card = document.createElement('div');
-        card.className = `dn-card ${item.type}`;
-        card.innerHTML = `
-          <div class="dn-card-header">
-            <span class="dn-card-subject ${sub.cls}">${sub.icon} ${sub.label}</span>
-            <span class="dn-card-date">📅 ${formatDate(item.date)}</span>
-          </div>
-          <div class="dn-card-title">${item.title}</div>
-          ${item.body ? `<div class="dn-card-body">${item.body}</div>` : ''}
-          <div class="dn-card-footer">
-            <span class="dn-card-type ${item.type}">${item.type === 'essay' ? '📝 Essay Question' : '❓ Question / Exam'}</span>
-            ${item.doctor ? `<span class="dn-card-doctor">👨‍⚕️ ${item.doctor}</span>` : ''}
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    /* Tab switching */
-    document.querySelectorAll('.dn-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.dn-tab').forEach(b => b.classList.remove('active'));
-        document.querySelectorAll('.dn-panel').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        activeTab = btn.dataset.dnTab;
-        document.getElementById('dn-panel-' + activeTab).classList.add('active');
-      });
-    });
-
-    /* Filter */
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter = btn.dataset.filter;
-        renderCards();
-      });
-    });
-
-    /* Add modal */
-    const overlay = document.getElementById('add-modal-overlay');
-    document.getElementById('open-add-modal').addEventListener('click', () => {
-      document.getElementById('dn-type').value = activeTab === 'essay' ? 'essay' : 'questions';
-      overlay.classList.add('active');
-    });
-    document.getElementById('close-add-modal').addEventListener('click', () => overlay.classList.remove('active'));
-    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('active'); });
-
-    document.getElementById('save-dn-item').addEventListener('click', () => {
-      const title = document.getElementById('dn-title').value.trim();
-      if (!title) { showToast('Please enter a title / question', 'warning'); return; }
-      const item = {
-        id: Date.now().toString(),
-        type: document.getElementById('dn-type').value,
-        subject: document.getElementById('dn-subject').value,
-        title,
-        body: document.getElementById('dn-body').value.trim(),
-        doctor: document.getElementById('dn-doctor').value.trim(),
-        date: new Date().toISOString()
-      };
-      const items = loadItems();
-      items.unshift(item);
-      saveItems(items);
-      overlay.classList.remove('active');
-      document.getElementById('dn-title').value = '';
-      document.getElementById('dn-body').value = '';
-      document.getElementById('dn-doctor').value = '';
-      // Switch to matching tab
-      const tabBtn = document.getElementById('dn-tab-' + item.type);
-      if (tabBtn) tabBtn.click();
-      renderCards();
-      showToast('News added successfully! ✅', 'success');
-    });
-
-    renderCards();
-  </script>
+            // Initialize with proper active state
+            const activeSection = document.querySelector('.content-section.active');
+            const activeTab = document.querySelector('.tab-btn.active');
+            
+            if (activeSection && !activeSection.classList.contains('active')) {
+                activeSection.classList.add('active');
+            }
+            
+            if (activeTab && !activeTab.classList.contains('active')) {
+                activeTab.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
