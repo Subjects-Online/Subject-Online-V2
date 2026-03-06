@@ -28,10 +28,13 @@
 /* ── Premium Footer (home page only) ─────────── */
 .site-footer {
   margin-top: 4rem;
-  background: rgba(5,6,15,0.95);
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(139, 92, 246, 0.15);
   padding: 0;
   text-align: left;
+  box-shadow: 0 -4px 24px rgba(99, 102, 241, 0.08);
 }
 .footer-main {
   display: grid;
@@ -135,7 +138,7 @@
 .footer-contact-btn:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(99,102,241,0.55); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(0,0,0,0.07);
   padding: 1.1rem 2rem;
   text-align: center;
   font-size: 0.75rem;
