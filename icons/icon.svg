@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="80" fill="#07071a"/>
+  <defs>
+    <radialGradient id="g1" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#07071a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="80" fill="url(#g1)"/>
+  <!-- Book shape -->
+  <rect x="120" y="130" width="272" height="320" rx="16" fill="none" stroke="#7c3aed" stroke-width="8"/>
+  <rect x="120" y="130" width="136" height="320" rx="0" fill="#1e1040" opacity=".8"/>
+  <rect x="248" y="130" width="8" height="320" fill="#7c3aed" opacity=".6"/>
+  <!-- Lines -->
+  <rect x="270" y="200" width="96" height="8" rx="4" fill="#a78bfa" opacity=".8"/>
+  <rect x="270" y="228" width="70" height="8" rx="4" fill="#a78bfa" opacity=".5"/>
+  <rect x="270" y="256" width="84" height="8" rx="4" fill="#a78bfa" opacity=".6"/>
+  <rect x="270" y="284" width="60" height="8" rx="4" fill="#a78bfa" opacity=".4"/>
+  <!-- SO text -->
+  <text x="256" y="510" font-family="Arial,sans-serif" font-size="0" fill="white"></text>
+  <rect x="176" y="470" width="160" height="32" rx="16" fill="#7c3aed" opacity=".0"/>
+  <!-- Glow circle -->
+  <circle cx="256" cy="290" r="160" fill="none" stroke="#7c3aed" stroke-width="2" opacity=".15"/>
+</svg>
