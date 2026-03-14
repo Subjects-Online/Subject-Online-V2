@@ -1,120 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Subjects Online — Your #1 Study Platform</title>
-  <meta name="description" content="Perfectly organized course materials, professor updates, and personal growth — all in one place.">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#7c3aed">
-  <link rel="apple-touch-icon" href="icons/icon.svg">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span>📚</span>
-      <span class="logo-text">Subjects<span class="logo-accent">Online</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html"       class="nav-link">Home</a>
-      <a href="subjects.html"    class="nav-link">Browse Subjects</a>
-      <a href="doctors-news.html" class="nav-link">Doctors News</a>
-      <a href="personal-dev.html" class="nav-link">Self Development</a>
-    </div>
-    <div class="nav-right">
-      <button class="theme-btn" onclick="toggleTheme()">
-        <span class="theme-ico">🌙</span>
-        <span class="theme-label">Dark</span>
-      </button>
-      <button class="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu">
-  <div class="mobile-menu-inner">
-    <a href="index.html"       class="mobile-link">Home</a>
-    <a href="subjects.html"    class="mobile-link">Browse Subjects</a>
-    <a href="doctors-news.html" class="mobile-link">Doctors News</a>
-    <a href="personal-dev.html" class="mobile-link">Self Development</a>
-    <button class="theme-btn" style="margin-top:16px;width:100%" onclick="toggleTheme()">
-      <span class="theme-ico">🌙</span>
-      <span class="theme-label">Dark</span>
-    </button>
-  </div>
-</div>
-<div class="menu-backdrop"></div>
-
-<!-- PAGE -->
-<div class="page" style="padding-top:70px;overflow:hidden">
-  <!-- BG -->
-  <div class="bg-wrap">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="grid-bg"></div>
-  </div>
-
-  <!-- HERO -->
-  <section class="home-hero">
-    <div class="container hero-inner">
-      <div class="hero-eye au">
-        <span class="eye-dot"></span>
-        <span>Your #1 Study Platform</span>
-      </div>
-      <h1 class="hero-title au d1">
-        <span class="l1">Study Smarter.</span>
-        <span class="l2 g-text">Score Higher.</span>
-      </h1>
-      <p class="hero-sub au d2">
-        <strong>Subjects Online</strong> brings you perfectly organized course materials,
-        professor updates, and personal growth — all in one stunning platform.
-      </p>
-      <div class="hero-cta au d3">
-        <a href="subjects.html" class="btn btn-primary"><span>🚀</span> Get Started</a>
-        <div class="hero-pills">
-          <span class="s-pill"><span>📚</span> 8 Subjects</span>
-          <span class="s-pill"><span>🎬</span> 7 Sections</span>
-          <span class="s-pill"><span>⚡</span> Free</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Subjects Online — Your #1 Study Platform</title>
+    <meta
+      name="description"
+      content="Perfectly organized course materials, professor updates, and personal growth — all in one place."
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#7c3aed" />
+    <link rel="apple-touch-icon" href="icons/icon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <span>📚</span>
+          <span class="logo-text"
+            >Subjects<span class="logo-accent">Online</span></span
+          >
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="subjects.html" class="nav-link">Browse Subjects</a>
+          <a href="doctors-news.html" class="nav-link">Doctors News</a>
+          <a href="personal-dev.html" class="nav-link">Self Development</a>
+        </div>
+        <div class="nav-right">
+          <button class="theme-btn" onclick="toggleTheme()">
+            <span class="theme-ico">🌙</span>
+            <span class="theme-label">Dark</span>
+          </button>
+          <button class="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- CARDS -->
-  <section class="home-cards-sec">
-    <div class="container">
-      <div class="cards-label au">
-        <span class="line"></span><span>What's inside</span><span class="line"></span>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="subjects.html" class="mobile-link">Browse Subjects</a>
+        <a href="doctors-news.html" class="mobile-link">Doctors News</a>
+        <a href="personal-dev.html" class="mobile-link">Self Development</a>
+        <button
+          class="theme-btn"
+          style="margin-top: 16px; width: 100%"
+          onclick="toggleTheme()"
+        >
+          <span class="theme-ico">🌙</span>
+          <span class="theme-label">Dark</span>
+        </button>
       </div>
-      <div class="home-cards" id="home-cards"></div>
     </div>
-  </section>
+    <div class="menu-backdrop"></div>
 
-  <!-- BANNER -->
-  <section class="home-banner">
-    <div class="container">
-      <div class="banner-card glass as">
-        <div class="banner-left">
-          <span class="banner-emoji">✨</span>
-          <div>
-            <h3>Built for Faculty of Commerce students</h3>
-            <p>Fresh content uploaded regularly. Bookmark the site and stay ahead.</p>
+    <!-- PAGE -->
+    <div class="page" style="padding-top: 70px; overflow: hidden">
+      <!-- BG -->
+      <div class="bg-wrap">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="grid-bg"></div>
+      </div>
+
+      <!-- HERO -->
+      <section class="home-hero">
+        <div class="container hero-inner">
+          <div class="hero-eye au">
+            <span class="eye-dot"></span>
+            <span>Your #1 Study Platform</span>
+          </div>
+          <h1 class="hero-title au d1">
+            <span class="l1">Subjects Online</span>
+          </h1>
+          <p class="hero-sub au d2">
+            <strong>Subjects Online</strong> brings you perfectly organized
+            course materials, professor updates, and personal growth — all in
+            one stunning platform.
+          </p>
+          <div class="hero-cta au d3">
+            <a href="subjects.html" class="btn btn-primary"
+              ><span>🚀</span> Get Started</a
+            >
+            <div class="hero-pills">
+              <span class="s-pill"><span>📚</span> 8 Subjects</span>
+              <span class="s-pill"><span>🎬</span> 7 Sections</span>
+              <span class="s-pill"><span>⚡</span> Free</span>
+            </div>
           </div>
         </div>
-        <a href="subjects.html" class="btn btn-primary">Explore Now</a>
-      </div>
-    </div>
-  </section>
-</div>
+      </section>
 
-<script src="data.js"></script>
-<script src="js/main.js"></script>
-<script>if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
-</body>
+      <!-- CARDS -->
+      <section class="home-cards-sec">
+        <div class="container">
+          <div class="cards-label au">
+            <span class="line"></span><span>What's inside</span
+            ><span class="line"></span>
+          </div>
+          <div class="home-cards" id="home-cards"></div>
+        </div>
+      </section>
+
+      <!-- BANNER -->
+      <section class="home-banner">
+        <div class="container">
+          <div class="banner-card glass as">
+            <div class="banner-left">
+              <span class="banner-emoji">✨</span>
+              <div>
+                <h3>Built for Faculty of Commerce students</h3>
+                <p>
+                  Fresh content uploaded regularly. Bookmark the site and stay
+                  ahead.
+                </p>
+              </div>
+            </div>
+            <a href="subjects.html" class="btn btn-primary">Explore Now</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      if ("serviceWorker" in navigator)
+        navigator.serviceWorker.register("./sw.js");
+    </script>
+  </body>
 </html>
