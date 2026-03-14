@@ -148,7 +148,8 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1-2",
           type: "file",
-          content: "../pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
+          content:
+            "../pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
         },
         {
           id: "lec2",
