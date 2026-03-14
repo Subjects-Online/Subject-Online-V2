@@ -148,20 +148,19 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1-2",
           type: "file",
-          content:
-            "/pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
+          content: "../pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
         },
         {
           id: "lec2",
           title: "Lect 3",
           type: "file",
-          content: "/pdfs/accounting/Non-Monetary_Asset_Exchanges.pdf",
+          content: "../pdfs/accounting/Non-Monetary_Asset_Exchanges.pdf",
         },
         {
           id: "lec3",
           title: "Lects 'HandWriting'",
           type: "file",
-          content: "/pdfs/accounting/Lects(Acc.) (S.O).pdf",
+          content: "./pdfs/accounting/Lects(Acc.) (S.O).pdf",
         },
       ],
       [
@@ -169,7 +168,7 @@ const CONTENT = {
           id: "lec4",
           title: "Lect 4",
           type: "file",
-          content: "/pdfs/accounting/Lect4 (Acc.) (S.O).pdf",
+          content: "./pdfs/accounting/Lect4 (Acc.) (S.O).pdf",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -182,19 +181,19 @@ const CONTENT = {
           id: "vid1",
           title: "Lect 1-2 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/تحديد_تكلفة_الأصول_الثابتة.mp4",
+          content: "./pdfs/accounting/تحديد_تكلفة_الأصول_الثابتة.mp4",
         },
         {
           id: "vid2",
           title: "Lect 3 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 3 .mp4",
+          content: "./pdfs/accounting/Lect 3 .mp4",
         },
         {
           id: "vid3",
           title: "Ch1 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Ch1.mp4",
+          content: "./pdfs/accounting/Ch1.mp4",
         },
       ],
       [
@@ -202,19 +201,19 @@ const CONTENT = {
           id: "vid3",
           title: "Lect 4 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 4 (Acc.) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 4 (Acc.) (S.O).mp4",
         },
         {
           id: "vid3",
           title: "Lect 5 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 5 (Accounting) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 5 (Accounting) (S.O).mp4",
         },
         {
           id: "vid3",
           title: "Lect 6 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 6 (Accounting) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 6 (Accounting) (S.O).mp4",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -227,7 +226,7 @@ const CONTENT = {
           id: "lec2",
           title: "Section 1-2 'HandWriting'",
           type: "file",
-          content: "/pdfs/accounting/Sections1-2 (Acc.) (S.O).pdf",
+          content: "./pdfs/accounting/Sections1-2 (Acc.) (S.O).pdf",
         },
       ],
       [], // Chapter 2
@@ -247,27 +246,27 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1 Dr.Hannan",
           type: "file",
-          content: "/pdfs/economics/Lect_1_Cardinal_Utility_Theory.pdf",
+          content: "../pdfs/economics/Lect_1_Cardinal_Utility_Theory.pdf",
         },
         {
           id: "lec2",
           title: "Lect 2 Dr.Hannan",
           type: "file",
-          content: "/pdfs/economics/Lect_2_Ordinalist_Approach.pdf",
+          content: "./pdfs/economics/Lect_2_Ordinalist_Approach.pdf",
         },
         {
           id: "lec3",
           title: "Lect 3 Dr.Hannan",
           type: "file",
           content:
-            "/pdfs/economics/Price_Consumption_Curve_(PCC)__Lecture_3 1.pdf",
+            "./pdfs/economics/Price_Consumption_Curve_(PCC)__Lecture_3 1.pdf",
         },
         {
           id: "lec3",
           title: "Lect 3 Dr.Hannan",
           type: "file",
           content:
-            "/pdfs/economics/Price_Consumption_Curve_(PCC)__Lecture_3 2.pdf",
+            "./pdfs/economics/Price_Consumption_Curve_(PCC)__Lecture_3 2.pdf",
         },
       ],
       [
@@ -275,19 +274,19 @@ const CONTENT = {
           id: "lec4",
           title: "Lect 4 Dr.Hannan",
           type: "file",
-          content: "/pdfs/economics/Lect 4 (ECO) (S.O).pdf",
+          content: "./pdfs/economics/Lect 4 (ECO) (S.O).pdf",
         },
         {
           id: "lec5",
           title: "Lect 5 Dr.Hannan",
           type: "file",
-          content: "/pdfs/economics/Lect 5 (ECO) (S.O).pdf",
+          content: "./pdfs/economics/Lect 5 (ECO) (S.O).pdf",
         },
         {
           id: "lec5",
           title: "Lects 'HandWriting' Dr.Hannan",
           type: "file",
-          content: "/pdfs/economics/Lect 1 - Lect 5.pdf",
+          content: "./pdfs/economics/Lect 1 - Lect 5.pdf",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -299,19 +298,19 @@ const CONTENT = {
           id: "vid1",
           title: "Lect 1-2 Dr.MZ",
           type: "video",
-          content: "/pdfs/economics/lect 1 .mp4",
+          content: "./pdfs/economics/lect 1 .mp4",
         },
         {
           id: "vid2",
           title: "Lect 3 Dr.MZ",
           type: "video",
-          content: "/pdfs/economics/Lect 2 .mp4",
+          content: "./pdfs/economics/Lect 2 .mp4",
         },
         {
           id: "vid3",
           title: "Ch1 Dr.MZ",
           type: "video",
-          content: "/pdfs/economics/lect 3 .mp4",
+          content: "./pdfs/economics/lect 3 .mp4",
         },
       ],
       [
@@ -319,19 +318,19 @@ const CONTENT = {
           id: "vid3",
           title: "Lect 4 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 4 (Acc.) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 4 (Acc.) (S.O).mp4",
         },
         {
           id: "vid3",
           title: "Lect 5 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 5 (Accounting) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 5 (Accounting) (S.O).mp4",
         },
         {
           id: "vid3",
           title: "Lect 6 Dr.MZ",
           type: "video",
-          content: "/pdfs/accounting/Lect 6 (Accounting) (S.O).mp4",
+          content: "./pdfs/accounting/Lect 6 (Accounting) (S.O).mp4",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -343,7 +342,7 @@ const CONTENT = {
           id: "lec2",
           title: "Section 1-2 'HandWriting'",
           type: "file",
-          content: "/pdfs/economics/Section1-2(Eco) (S.O).pdf",
+          content: "./pdfs/economics/Section1-2(Eco) (S.O).pdf",
         },
       ],
       [], // Chapter 2
@@ -359,25 +358,25 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1-2 Dr.Eman",
           type: "file",
-          content: "/pdfs/english/Macroeconomics Lect 1 - 2.pdf",
+          content: "./pdfs/english/Macroeconomics Lect 1 - 2.pdf",
         },
         {
           id: "lec2",
           title: "Lect 3 Dr.Eman",
           type: "file",
-          content: "/pdfs/english/Lect 3 (English) (S.O).pdf",
+          content: "./pdfs/english/Lect 3 (English) (S.O).pdf",
         },
         {
           id: "lec3",
           title: "Lect 4 ",
           type: "file",
-          content: "/pdfs/english/Lect 4 (English) (S.O).pdf",
+          content: "./pdfs/english/Lect 4 (English) (S.O).pdf",
         },
         {
           id: "lec3",
           title: "Lect5 'HandWriting'",
           type: "file",
-          content: "/pdfs/english/Lect 5 (English) (S.O).pdf",
+          content: "./pdfs/english/Lect 5 (English) (S.O).pdf",
         },
       ],
       [], // Chapter 2
@@ -391,19 +390,19 @@ const CONTENT = {
           id: "vid1",
           title: "Lect 1-2 Dr.Eman",
           type: "video",
-          content: "/pdfs/english/Lect 1-2.mp4",
+          content: "./pdfs/english/Lect 1-2.mp4",
         },
         {
           id: "vid2",
           title: "Lect 3 Dr.Eman",
           type: "video",
-          content: "/pdfs/english/Lect 3 (English) (S.O).mp4",
+          content: "./pdfs/english/Lect 3 (English) (S.O).mp4",
         },
         {
           id: "vid3",
           title: "Lect 4 Dr.Eman",
           type: "video",
-          content: "/pdfs/english/Lect 4 (English) (S.O).mp4",
+          content: "./pdfs/english/Lect 4 (English) (S.O).mp4",
         },
       ],
       [], // Chapter 2
@@ -416,7 +415,7 @@ const CONTENT = {
           id: "lec4",
           title: "Lect4 Dr.Eman",
           type: "file",
-          content: "/pdfs/english/Summary of lect 4 (English) (S.O)pdf.pdf",
+          content: "./pdfs/english/Summary of lect 4 (English) (S.O)pdf.pdf",
         },
       ],
       [], // Chapter 2
@@ -435,19 +434,19 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1 Dr.HM",
           type: "file",
-          content: "/pdfs/marketing/Lect 1 Marketing.pdf",
+          content: "./pdfs/marketing/Lect 1 Marketing.pdf",
         },
         {
           id: "lec2",
           title: "Lect 2 Dr.HM",
           type: "file",
-          content: "/pdfs/marketing/Lect_2_(Cont.).pdf",
+          content: "./pdfs/marketing/Lect_2_(Cont.).pdf",
         },
         {
           id: "lec3",
           title: "Lect3 Dr.HM'",
           type: "file",
-          content: "/pdfs/marketing/Lect 3 (Marketing) (S.O).pdf",
+          content: "./pdfs/marketing/Lect 3 (Marketing) (S.O).pdf",
         },
       ],
       [
@@ -455,7 +454,7 @@ const CONTENT = {
           id: "lec4",
           title: "Lect 4 Dr.HM",
           type: "file",
-          content: "/pdfs/marketing/Lect4 (Marketing) (S.O).pdf",
+          content: "./pdfs/marketing/Lect4 (Marketing) (S.O).pdf",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -468,19 +467,19 @@ const CONTENT = {
           id: "vid1",
           title: "Lect 1 Dr.HM",
           type: "video",
-          content: "/pdfs/marketing/What_is_Marketing,_Really_.mp4",
+          content: "./pdfs/marketing/What_is_Marketing,_Really_.mp4",
         },
         {
           id: "vid2",
           title: "Lect 2 Dr.HM",
           type: "video",
-          content: "/pdfs/marketing/Lect 2.mp4",
+          content: "./pdfs/marketing/Lect 2.mp4",
         },
         {
           id: "vid3",
           title: "Lect 3 Dr.HM",
           type: "video",
-          content: "/pdfs/marketing/Lect 3 (Marketing) (S.O) .mp4",
+          content: "./pdfs/marketing/Lect 3 (Marketing) (S.O) .mp4",
         },
       ],
       [
@@ -488,7 +487,7 @@ const CONTENT = {
           id: "vid4",
           title: "Lect 4 Dr.HM",
           type: "video",
-          content: "/pdfs/marketing/Lect 4 (Marketing) (S.O).mp4",
+          content: "./pdfs/marketing/Lect 4 (Marketing) (S.O).mp4",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -500,7 +499,7 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1 Dr.HM",
           type: "file",
-          content: "/pdfs/marketing/Marketing_Lect_1 summary.pdf",
+          content: "./pdfs/marketing/Marketing_Lect_1 summary.pdf",
         },
       ],
       [
@@ -508,7 +507,7 @@ const CONTENT = {
           id: "lec2",
           title: "Lect 2 Dr.HM",
           type: "file",
-          content: "/pdfs/marketing/Lect 2 summary .pdf",
+          content: "./pdfs/marketing/Lect 2 summary .pdf",
         },
       ], // Chapter 2
       [], // Chapter 3
@@ -526,19 +525,19 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1 DR.S.R",
           type: "file",
-          content: "/pdfs/ais/Explain of lect 1.pdf",
+          content: "./pdfs/ais/Explain of lect 1.pdf",
         },
         {
           id: "lec2",
           title: "Lect 2 DR.S.R",
           type: "file",
-          content: "/pdfs/ais/Lecture_No._2_.pdf",
+          content: "./pdfs/ais/Lecture_No._2_.pdf",
         },
         {
           id: "lec3",
           title: "Lect 3 DR.S.R",
           type: "file",
-          content: "/pdfs/ais/Lect 3.pdf",
+          content: "./pdfs/ais/Lect 3.pdf",
         },
       ],
       [
@@ -546,7 +545,7 @@ const CONTENT = {
           id: "lec4",
           title: "Lects 'HandWriting'",
           type: "file",
-          content: "/pdfs/ais/Lects (AIS) (S.O).pdf",
+          content: "./pdfs/ais/Lects (AIS) (S.O).pdf",
         },
       ], // Chapter 3
       [], // Chapter 4
@@ -559,19 +558,19 @@ const CONTENT = {
           id: "vid1",
           title: "Lect 1 Dr.S.R",
           type: "video",
-          content: "/pdfs/ais/الشرح__الفرق_بين_البيانات_والمعلومات.mp4",
+          content: "./pdfs/ais/الشرح__الفرق_بين_البيانات_والمعلومات.mp4",
         },
         {
           id: "vid2",
           title: "Lect 2 Dr.S.R",
           type: "video",
-          content: "/pdfs/ais/إزاي_تنظم_حسابات_البيزنس؟.mp4",
+          content: "./pdfs/ais/إزاي_تنظم_حسابات_البيزنس؟.mp4",
         },
         {
           id: "vid3",
           title: "Lect 3 Dr.S.R",
           type: "video",
-          content: "/pdfs/ais/Lect 3.mp4",
+          content: "./pdfs/ais/Lect 3.mp4",
         },
       ],
       [
@@ -579,13 +578,13 @@ const CONTENT = {
           id: "vid4",
           title: "Lect 4 Dr.S.R",
           type: "video",
-          content: "/pdfs/ais/Lect 4 (AIS) (S.O).mp4",
+          content: "./pdfs/ais/Lect 4 (AIS) (S.O).mp4",
         },
         {
           id: "vid5",
           title: "Lect 5 Dr.S.R",
           type: "video",
-          content: "/pdfs/ais/Lect 5 (AIS) (S.O).mp4",
+          content: "./pdfs/ais/Lect 5 (AIS) (S.O).mp4",
         },
       ], // Chapter 2
 
@@ -601,19 +600,19 @@ const CONTENT = {
           id: "lec1",
           title: "Lect 1 Dr.S.R",
           type: "file",
-          content: "/pdfs/ais/lect_1 summary.pdf",
+          content: "./pdfs/ais/lect_1 summary.pdf",
         },
         {
           id: "lec2",
           title: "Lect 2 Dr.S.R",
           type: "file",
-          content: "/pdfs/ais/Lecture_No._2 summary.pdf",
+          content: "./pdfs/ais/Lecture_No._2 summary.pdf",
         },
         {
           id: "lec3",
           title: "Lect 3 Dr.S.R",
           type: "file",
-          content: "/pdfs/ais/Lect 3 Sum..pdf",
+          content: "./pdfs/ais/Lect 3 Sum..pdf",
         },
       ],
 
