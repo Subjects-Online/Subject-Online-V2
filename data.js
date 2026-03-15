@@ -146,31 +146,31 @@ const CONTENT = {
       [
         {
           id: "lec1",
-          title: "Introduction to PPE",
+          title: "Lect 1-2 Dr.MZ",
           type: "file",
           content:
             "./pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
-          interactive: [
-            {
-              title: "What is PPE?",
-              content:
-                "Property, Plant, and Equipment (PPE) are tangible assets used in business operations for more than one period.",
-            },
-            {
-              title: "Initial Measurement",
-              content:
-                "PPE is initially measured at cost, including purchase price and any directly attributable costs.",
-            },
-            {
-              title: "Subsequent Costs",
-              content:
-                "Day-to-day servicing costs are recognized in profit or loss, while major replacements are capitalized.",
-            },
-          ],
+          // interactive: [
+          //   {
+          //     title: "What is PPE?",
+          //     content:
+          //       "Property, Plant, and Equipment (PPE) are tangible assets used in business operations for more than one period.",
+          //   },
+          //   {
+          //     title: "Initial Measurement",
+          //     content:
+          //       "PPE is initially measured at cost, including purchase price and any directly attributable costs.",
+          //   },
+          //   {
+          //     title: "Subsequent Costs",
+          //     content:
+          //       "Day-to-day servicing costs are recognized in profit or loss, while major replacements are capitalized.",
+          //   },
+          // ],
         },
         {
           id: "lec2",
-          title: "Asset Exchanges",
+          title: "Lect 3 Dr.MZ",
           type: "file",
           content: "./pdfs/accounting/Non-Monetary_Asset_Exchanges.pdf",
           interactive: [
@@ -471,9 +471,85 @@ const CONTENT = {
       [
         {
           id: "pol1",
-          title: "Introduction to Political Science",
+          title: "Lect 1-2 Dr.Ashraf",
           type: "file",
-          content: "./pdfs/political-science/Intro.pdf",
+          content:
+            "./pdfs/political-science/Political_Science_Lectures_1__2.pdf",
+        },
+      ],
+      [
+        {
+          id: "pol2",
+          title: "Lect 3-4 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 3-4 (Political) (S.O).pdf",
+        },
+        {
+          id: "pol3",
+          title: "Lect 5 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 5 (Political) (S.O).pdf",
+        },
+      ],
+    ],
+    quizzes: [
+      [
+        {
+          id: "pol1",
+          title: "Quiz 1 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Quiz 1 Political Science.pdf",
+        },
+        {
+          id: "pol1",
+          title: "Quiz 1 Dr.Ashraf حل بالتفصيل",
+          type: "file",
+          content: "./pdfs/political-science/Quiz 1 (Political) (S.O).pdf",
+        },
+      ],
+    ],
+    videos: [
+      [
+        {
+          id: "vid1",
+          title: "Lect 1-2 Dr.Ashraf",
+          type: "video",
+          content: "./pdfs/political-science/Lect 1-2.mp4",
+        },
+      ],
+      [
+        {
+          id: "vid2",
+          title: "Lect 3-4 Dr.Ashraf ",
+          type: "video",
+          content: "./pdfs/political-science/Lect 3-4 (Political) (S.O).mp4",
+        },
+        {
+          id: "vid3",
+          title: "Lect 5 Dr.Ashraf ",
+          type: "video",
+          content: "./pdfs/political-science/Lect 5 (Public) (S.O).mp4",
+        },
+      ],
+    ],
+    qa: [
+      [
+        {
+          id: "Lec1",
+          title: "70 Q on Ch1",
+          type: "file",
+          content: "./pdfs/political-science/70 Q On Ch1.pdf",
+        },
+      ],
+    ],
+    summaries: [
+      [
+        {
+          id: "Lec1",
+          title: "Sum. Lect 1-2",
+          type: "file",
+          content:
+            "./pdfs/political-science/Political_Science summary __Lectures_1__2_.pdf",
         },
       ],
     ],
@@ -571,7 +647,32 @@ const CONTENT = {
   statistics: {
     "course-content": [
       // Chapter 1
-      [],
+      [
+        {
+          id: "lec1",
+          title: "Lect 1 Dr.Magda",
+          type: "file",
+          content: "./pdfs/statistics/Lect 1 (Stat) (S.O).pdf",
+        },
+        {
+          id: "lec3",
+          title: "Lect 3 Dr.Magda",
+          type: "file",
+          content: "./pdfs/statistics/Lect 3 (Stat) (S.O).pdf",
+        },
+        {
+          id: "lec4",
+          title: "Lect 4 Dr.Magda",
+          type: "file",
+          content: "./pdfs/statistics/Lect 4pdf.pdf",
+        },
+        {
+          id: "lec5",
+          title: "Lect1-4 'HandWriting' Dr.Magda",
+          type: "file",
+          content: "./pdfs/statistics/Lect1-4(Stat) (S.O).pdf",
+        },
+      ],
       [], // Chapter 2
       [], // Chapter 3
       [], // Chapter 4
@@ -579,24 +680,30 @@ const CONTENT = {
     videos: [
       // Chapter 1
       [
-        // {
-        //   id: "vid1",
-        //   title: "Lect 1-2 Dr.Eman",
-        //   type: "video",
-        //   content: "./pdfs/english/Lect 1-2.mp4",
-        // },
-        // {
-        //   id: "vid2",
-        //   title: "Lect 3 Dr.Eman",
-        //   type: "video",
-        //   content: "./pdfs/english/Lect 3 (English) (S.O).mp4",
-        // },
-        // {
-        //   id: "vid3",
-        //   title: "Lect 4 Dr.Eman",
-        //   type: "video",
-        //   content: "./pdfs/english/Lect 4 (English) (S.O).mp4",
-        // },
+        {
+          id: "vid1",
+          title: "Lect 1 Dr.Magda",
+          type: "video",
+          content: "./pdfs/statistics/Lect 1.mp4",
+        },
+        {
+          id: "vid2",
+          title: "Lect 2 Dr.Magda",
+          type: "video",
+          content: "./pdfs/statistics/Lect 2.mp4",
+        },
+        {
+          id: "vid3",
+          title: "Lect 3 Dr.Magda",
+          type: "video",
+          content: "./pdfs/statistics/Lect 3.mp4",
+        },
+        {
+          id: "vid4",
+          title: "Lect 4 Dr.Magda",
+          type: "video",
+          content: "./pdfs/statistics/Lect 4.mp4",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -615,37 +722,22 @@ const CONTENT = {
       [], // Chapter 3
       [], // Chapter 4
     ],
+    summaries: [
+      // Chapter 1
+      [
+        // {
+        //   id: "lec1",
+        //   title: "All Assignments Dr.Magda",
+        //   type: "file",
+        //   content: "./pdfs/statistics/All Assignments For Dr Magda.pdf",
+        // },
+      ],
+      [], // Chapter 2
+      [], // Chapter 3
+      [], // Chapter 4
+    ],
   },
-  // statistics: {
-  //   "course-content": [
-  //     [
-  //       {
-  //         id: "stat1",
-  //         title: "Probability Distribution",
-  //         type: "file",
-  //         content: "./pdfs/statistics/Prob_Dist.pdf",
-  //         interactive: [
-  //           {
-  //             title: "Random Variables",
-  //             content:
-  //               "A random variable is a numerical description of the outcome of an experiment.",
-  //           },
-  //           {
-  //             title: "Discrete vs Continuous",
-  //             content:
-  //               "Discrete variables have countable outcomes, while continuous variables can take any value in an interval.",
-  //           },
-  //           {
-  //             title: "Expected Value",
-  //             content:
-  //               "The mean or expected value of a random variable is the weighted average of all possible values.",
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   ],
-  // },
-  //----------------------------------------------
+ 
   ais: {
     "course-content": [
       // Chapter 1
@@ -752,81 +844,222 @@ const CONTENT = {
       [], // Chapter 4
     ],
   },
-  "public-finance": {},
+  "public-finance": {
+    "course-content": [
+      [
+        {
+          id: "lec1",
+          title: "Lect 1 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 1 (Public).pdf",
+        },
+        {
+          id: "lec2",
+          title: "Lect 2 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 2 (Public).pdf",
+        },
+        {
+          id: "lec3",
+          title: "Lect 3 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 3(Public) (S.O).pdf",
+        },
+        {
+          id: "lec4",
+          title: "Lect 4 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 4 (Public) (S.O).pdf",
+        },
+        {
+          id: "lec5",
+          title: "Lect 5 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 5 (Public) (S.O).pdf",
+        },
+        {
+          id: "lec5",
+          title: "Lect 2-5 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect2-5 (Public) (S.O).pdf",
+        },
+      ],
+    ],
+    videos: [
+      [
+        {
+          id: "vid1",
+          title: "Lect 1 Dr.Abeer",
+          type: "video",
+          content: "./pdfs/Puplic/Lect 1.mp4",
+        },
+        {
+          id: "vid2",
+          title: "Lect 2 Dr.Abeer",
+          type: "video",
+          content: "./pdfs/Puplic/Lect 2 (Public).pdf",
+        },
+        {
+          id: "vid3",
+          title: "Lect 3 Dr.Abeer",
+          type: "video",
+          content: "./pdfs/Puplic/Lect 3.mp4",
+        },
+        {
+          id: "vid4",
+          title: "Lect 4 Dr.Abeer",
+          type: "video",
+          content: "./pdfs/Puplic/Lect 4 (Public) (S.O).mp4",
+        },
+        {
+          id: "vid5",
+          title: "Lect 5 Dr.Abeer",
+          type: "video",
+          content: "./pdfs/Puplic/Lect 1.mp4",
+        },
+      ],
+    ],
+    sections: [
+      [
+        {
+          id: "lec1",
+          title: "section 1 Full_QA_with_Explanations Dr.Abeer ",
+          type: "file",
+          content:
+            "./pdfs/Puplic/Section_(1)__Public_Finance_(2)__Full_QA_with_Explanations_.pdf",
+        },
+        {
+          id: "lec1",
+          title: "section 1 Dr.Abeer اخطاء معدلة",
+          type: "file",
+          content:
+            "./pdfs/Puplic/Section 1 Public Finance 2 الاخطاء متعدلة .pdf",
+        },
+        {
+          id: "lec1",
+          title: "section 1 'HandWriting' Dr.Abeer  ",
+          type: "file",
+          content:
+            "./pdfs/Puplic/Sections1-2(Public) (S.O).pdf",
+        },
+      ],
+    ],
+    summaries: [
+      [
+        {
+          id: "lec1",
+          title: "Sum. Ch1 Dr.Abeer ",
+          type: "file",
+          content: "./pdfs/Puplic/Summary of Ch 1 (Public).pdf",
+        },
+      ],
+    ],
+  },
 };
 
+
+ // statistics: {
+  //   "course-content": [
+  //     [
+  //       {
+  //         id: "stat1",
+  //         title: "Probability Distribution",
+  //         type: "file",
+  //         content: "./pdfs/statistics/Prob_Dist.pdf",
+  //         interactive: [
+  //           {
+  //             title: "Random Variables",
+  //             content:
+  //               "A random variable is a numerical description of the outcome of an experiment.",
+  //           },
+  //           {
+  //             title: "Discrete vs Continuous",
+  //             content:
+  //               "Discrete variables have countable outcomes, while continuous variables can take any value in an interval.",
+  //           },
+  //           {
+  //             title: "Expected Value",
+  //             content:
+  //               "The mean or expected value of a random variable is the weighted average of all possible values.",
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   ],
+  // },
+  //----------------------------------------------
 const SPECIAL_CONTENT = {
   accounting: [
-    {
-      id: "sp-acc-1",
-      title: "PPE Discovery",
-      interactive: [
-        {
-          title: "The Concept",
-          content:
-            "Property, Plant, and Equipment (PPE) are the physical foundations of a business. They aren't for sale; they are for use.",
-        },
-        {
-          title: "Cost Components",
-          content:
-            "The cost of PPE includes everything needed to get it ready—purchase price, taxes, and even the platform it sits on.",
-        },
-      ],
-    },
+    // {
+    //   id: "sp-acc-1",
+    //   title: "PPE Discovery",
+    //   interactive: [
+    //     {
+    //       title: "The Concept",
+    //       content:
+    //         "Property, Plant, and Equipment (PPE) are the physical foundations of a business. They aren't for sale; they are for use.",
+    //     },
+    //     {
+    //       title: "Cost Components",
+    //       content:
+    //         "The cost of PPE includes everything needed to get it ready—purchase price, taxes, and even the platform it sits on.",
+    //     },
+    //   ],
+    // },
   ],
   eco: [
-    {
-      id: "sp-eco-1",
-      title: "Utility Journey",
-      interactive: [
-        {
-          title: "Satisfying Needs",
-          content:
-            "In economics, utility is the measure of happiness. But be careful—happiness fades with every extra unit you consume.",
-        },
-        {
-          title: "The Curve",
-          content:
-            "Diminishing marginal utility explains why your second pizza slice is never as exciting as the first.",
-        },
-      ],
-    },
+    // {
+    //   id: "sp-eco-1",
+    //   title: "Utility Journey",
+    //   interactive: [
+    //     {
+    //       title: "Satisfying Needs",
+    //       content:
+    //         "In economics, utility is the measure of happiness. But be careful—happiness fades with every extra unit you consume.",
+    //     },
+    //     {
+    //       title: "The Curve",
+    //       content:
+    //         "Diminishing marginal utility explains why your second pizza slice is never as exciting as the first.",
+    //     },
+    //   ],
+    // },
   ],
   statistics: [
-    {
-      id: "sp-stat-1",
-      title: "Probability Masterclass",
-      interactive: [
-        {
-          title: "Randomness",
-          content:
-            "A random variable maps outcomes to numbers. It's the bridge between raw data and mathematical models.",
-        },
-        {
-          title: "Distributions",
-          content:
-            "How data is spread—discrete or continuous—defines which statistical tools we use to predict the future.",
-        },
-      ],
-    },
+    // {
+    //   id: "sp-stat-1",
+    //   title: "Probability Masterclass",
+    //   interactive: [
+    //     {
+    //       title: "Randomness",
+    //       content:
+    //         "A random variable maps outcomes to numbers. It's the bridge between raw data and mathematical models.",
+    //     },
+    //     {
+    //       title: "Distributions",
+    //       content:
+    //         "How data is spread—discrete or continuous—defines which statistical tools we use to predict the future.",
+    //     },
+    //   ],
+    // },
   ],
   "political-science": [
-    {
-      id: "sp-pol-1",
-      title: "Power & Systems",
-      interactive: [
-        {
-          title: "Political Entities",
-          content:
-            "States, governments, and international organizations are the actors on the global stage.",
-        },
-        {
-          title: "Governance",
-          content:
-            "How power is distributed—democracy, autocracy, or oligarchy—shapes the destiny of nations.",
-        },
-      ],
-    },
+    // {
+    //   id: "sp-pol-1",
+    //   title: "Power & Systems",
+    //   interactive: [
+    //     {
+    //       title: "Political Entities",
+    //       content:
+    //         "States, governments, and international organizations are the actors on the global stage.",
+    //     },
+    //     {
+    //       title: "Governance",
+    //       content:
+    //         "How power is distributed—democracy, autocracy, or oligarchy—shapes the destiny of nations.",
+    //     },
+    //   ],
+    // },
   ],
 };
 
