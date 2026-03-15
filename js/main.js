@@ -241,7 +241,7 @@ function toggleChapter(btn, color) {
 
     const list = document.createElement("div");
     list.className = "lecs-list";
-    
+
     const progressData = JSON.parse(localStorage.getItem("so_progress") || "{}");
     const subjProg = progressData[window._currentSubjectId] || { pdfs: [], videos: [] };
 
@@ -334,7 +334,7 @@ function openViewer(lec, subjectId) {
 
   overlay.classList.add("open");
   document.body.style.overflow = "hidden";
-  
+
   if (subjectId && lec.content) {
     // Save as pending instead of auto-completing
     localStorage.setItem("so_pending_progress", JSON.stringify({
@@ -349,7 +349,7 @@ function openViewer(lec, subjectId) {
 
 function askProgress(pending) {
   if (!pending) return;
-  
+
   let dialog = document.getElementById("progress-dialog-overlay");
   if (!dialog) {
     dialog = document.createElement("div");
@@ -370,7 +370,7 @@ function askProgress(pending) {
   }
 
   document.getElementById("pd-title").textContent = pending.title || "the material";
-  
+
   const btnYes = document.getElementById("pd-btn-yes");
   const btnNo = document.getElementById("pd-btn-no");
 
@@ -401,14 +401,14 @@ function saveProgress(subjectId, lec) {
     if (!data[subjectId][type].includes(itemId)) {
       data[subjectId][type].push(itemId);
       localStorage.setItem("so_progress", JSON.stringify(data));
-      
+
       const openedBtn = document.querySelector(`.lec-item[data-id="${lec.id}"] .lec-open`);
       if (openedBtn) {
         openedBtn.innerHTML = "✅";
         openedBtn.style.color = "#10b981";
       }
     }
-  } catch(e) {}
+  } catch (e) { }
 }
 
 function closeViewer() {
@@ -416,13 +416,13 @@ function closeViewer() {
   if (overlay) { overlay.classList.remove("open"); document.body.style.overflow = ""; }
   const body = document.getElementById("mv-body");
   if (body) body.innerHTML = "";
-  
+
   const pendingStr = localStorage.getItem("so_pending_progress");
   if (pendingStr) {
     try {
       const pending = JSON.parse(pendingStr);
       askProgress(pending);
-    } catch(e){}
+    } catch (e) { }
   }
 }
 
@@ -442,7 +442,7 @@ function renderProgressSection() {
 
   let totalPdfs = 0, totalVids = 0;
   let subjTotals = {};
-  
+
   SUBJECTS.forEach(sub => {
     subjTotals[sub.id] = { pdfs: 0, videos: 0 };
     const content = CONTENT[sub.id] || {};
@@ -465,42 +465,42 @@ function renderProgressSection() {
 
   const progressData = JSON.parse(localStorage.getItem("so_progress") || "{}");
   let readPdfs = 0, watchedVids = 0;
-  
+
   Object.keys(subjTotals).forEach(subjId => {
     const p = progressData[subjId] || { pdfs: [], videos: [] };
     readPdfs += p.pdfs.length;
     watchedVids += p.videos.length;
   });
-  
+
   const setCircle = (id, count, total) => {
     const valEl = document.getElementById(`${id}-val`);
     const countEl = document.getElementById(`${id}-count`);
     const fg = document.querySelector(`.${id}-fg`);
-    if(!valEl || !fg) return;
-    
+    if (!valEl || !fg) return;
+
     const pct = total > 0 ? Math.round((count / total) * 100) : 0;
     valEl.textContent = `${pct}%`;
     countEl.textContent = `${count} / ${total}`;
-    
+
     setTimeout(() => {
       const offset = 283 - (283 * pct) / 100;
       fg.style.strokeDashoffset = offset;
     }, 100);
   };
-  
+
   setCircle("pdf", readPdfs, totalPdfs);
   setCircle("vid", watchedVids, totalVids);
 
   const grid = document.getElementById("subject-progress-grid");
   if (!grid) return;
-  
+
   grid.innerHTML = SUBJECTS.map((sub, i) => {
     const tot = subjTotals[sub.id] || { pdfs: 0, videos: 0 };
-    
+
     const p = progressData[sub.id] || { pdfs: [], videos: [] };
     const pdfPct = tot.pdfs > 0 ? (p.pdfs.length / tot.pdfs) * 100 : 0;
     const vidPct = tot.videos > 0 ? (p.videos.length / tot.videos) * 100 : 0;
-    
+
     return `
       <a href="subject.html?id=${sub.id}" class="sp-card au" style="animation-delay:${i * 0.1}s; text-decoration:none">
         <div class="sp-header">
@@ -531,8 +531,122 @@ function checkPendingProgress() {
     try {
       const pending = JSON.parse(pendingStr);
       askProgress(pending);
-    } catch(e){}
+    } catch (e) { }
   }
+}
+
+// ===== AI ASSISTANT =====
+function initAiAssistant() {
+  const body = document.body;
+
+  // Inject UI
+  const fab = document.createElement("button");
+  fab.className = "ai-fab au";
+  fab.style.animationDelay = "0.5s";
+  fab.innerHTML = "✨";
+  body.appendChild(fab);
+
+  const panel = document.createElement("div");
+  panel.className = "ai-panel";
+  panel.innerHTML = `
+    <div class="ai-header">
+      <div class="ai-h-left">
+        <span class="ai-h-icon">✨</span>
+        <div>
+          <div class="ai-h-title">Gemini AI Tutor</div>
+          <div class="ai-h-sub">Always here to help</div>
+        </div>
+      </div>
+      <button class="ai-close">✕</button>
+    </div>
+    <div class="ai-messages" id="ai-messages">
+      <div class="ai-msg ai-msg-bot">Hello! I'm Gemini, your AI tutor. Ask me to explain a topic, summarize notes, or help you study!</div>
+    </div>
+    <div class="ai-input-area">
+      <input type="text" class="ai-input" id="ai-input" placeholder="Ask anything..." autocomplete="off">
+      <button class="ai-send" id="ai-send">↑</button>
+    </div>
+  `;
+  body.appendChild(panel);
+
+  const closeBtn = panel.querySelector(".ai-close");
+  const msgsContainer = panel.querySelector("#ai-messages");
+  const inputEl = panel.querySelector("#ai-input");
+  const sendBtn = panel.querySelector("#ai-send");
+
+  // Toggle panel
+  fab.addEventListener("click", () => panel.classList.add("open"));
+  closeBtn.addEventListener("click", () => panel.classList.remove("open"));
+
+  const appendMsg = (text, isUser) => {
+    const d = document.createElement("div");
+    d.className = "ai-msg " + (isUser ? "ai-msg-user" : "ai-msg-bot");
+    d.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+    msgsContainer.appendChild(d);
+    msgsContainer.scrollTop = msgsContainer.scrollHeight;
+  };
+
+  const showTyping = () => {
+    const d = document.createElement("div");
+    d.className = "ai-typing";
+    d.id = "ai-typing-ind";
+    d.innerHTML = '<div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>';
+    msgsContainer.appendChild(d);
+    msgsContainer.scrollTop = msgsContainer.scrollHeight;
+  };
+
+  const hideTyping = () => {
+    const ind = document.getElementById("ai-typing-ind");
+    if (ind) ind.remove();
+  };
+
+  const handleSend = async () => {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    inputEl.value = "";
+
+    appendMsg(text, true);
+
+    // ⚠️ تحذير أمني: وضع الـ API Key في كود الـ JavaScript المفتوح (Frontend) بيخليه مكشوف لأي حد بيزور الموقع.
+    // لأي موقع حقيقي، لازم الـ Key يتخزن في Backend. لكن بما إن الموقع هنا Static، دي الطريقة الوحيدة المؤقتة.
+    const apiKey = "AIzaSyDFSCVw0Td3WEh4hpZZqweUufa9A1-S31g"; // حط الـ API Key بتاعك هنا مكان الكلمة دي
+
+    if (!apiKey || apiKey === "YOUR_API_KEY_HERE") {
+      appendMsg("عذراً، لم يتم إعداد مفتاح API من قبل مدير النظام بعد.", false);
+      return;
+    }
+
+    showTyping();
+
+    try {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: "You are an expert tutor for university students. Be helpful, concise, and friendly. Explain clearly but keep it short. Don't use heavy markdown except for bold and lists. The student says: " + text }] }]
+        })
+      });
+
+      const data = await res.json();
+      hideTyping();
+
+      if (data.error) {
+        appendMsg("API Error: " + data.error.message, false);
+      } else if (data.candidates && data.candidates[0]) {
+        appendMsg(data.candidates[0].content.parts[0].text, false);
+      } else {
+        appendMsg("I'm sorry, I couldn't generate a response.", false);
+      }
+    } catch (e) {
+      hideTyping();
+      appendMsg("Network error. Check your connection or API key.", false);
+    }
+  };
+
+  sendBtn.addEventListener("click", handleSend);
+  inputEl.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleSend();
+  });
 }
 
 // ===== INIT =====
@@ -544,4 +658,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initSubjectPage();
   renderProgressSection();
   checkPendingProgress();
+  initAiAssistant();
 });
