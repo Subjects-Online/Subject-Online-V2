@@ -148,12 +148,25 @@ const CONTENT = {
           id: "lec1",
           title: "Introduction to PPE",
           type: "file",
-          content: "./pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
+          content:
+            "./pdfs/accounting/Acquisition__Disposition_of_Property_Plant_and_Equipment.pdf",
           interactive: [
-            { title: "What is PPE?", content: "Property, Plant, and Equipment (PPE) are tangible assets used in business operations for more than one period." },
-            { title: "Initial Measurement", content: "PPE is initially measured at cost, including purchase price and any directly attributable costs." },
-            { title: "Subsequent Costs", content: "Day-to-day servicing costs are recognized in profit or loss, while major replacements are capitalized." }
-          ]
+            {
+              title: "What is PPE?",
+              content:
+                "Property, Plant, and Equipment (PPE) are tangible assets used in business operations for more than one period.",
+            },
+            {
+              title: "Initial Measurement",
+              content:
+                "PPE is initially measured at cost, including purchase price and any directly attributable costs.",
+            },
+            {
+              title: "Subsequent Costs",
+              content:
+                "Day-to-day servicing costs are recognized in profit or loss, while major replacements are capitalized.",
+            },
+          ],
         },
         {
           id: "lec2",
@@ -161,9 +174,17 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Non-Monetary_Asset_Exchanges.pdf",
           interactive: [
-            { title: "Non-Monetary Exchanges", content: "Occurs when an asset is acquired in exchange for a non-monetary asset or a combination of monetary and non-monetary assets." },
-            { title: "Commercial Substance", content: "An exchange has commercial substance if the future cash flows of the entity are expected to change significantly as a result of the transaction." }
-          ]
+            {
+              title: "Non-Monetary Exchanges",
+              content:
+                "Occurs when an asset is acquired in exchange for a non-monetary asset or a combination of monetary and non-monetary assets.",
+            },
+            {
+              title: "Commercial Substance",
+              content:
+                "An exchange has commercial substance if the future cash flows of the entity are expected to change significantly as a result of the transaction.",
+            },
+          ],
         },
         {
           id: "lec3",
@@ -257,9 +278,17 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Lect_1_Cardinal_Utility_Theory.pdf",
           interactive: [
-            { title: "What is Utility?", content: "Utility is the satisfaction or benefit derived from consuming a product." },
-            { title: "Law of Diminishing Marginal Utility", content: "As more of a good is consumed, the additional satisfaction from another unit decreases." }
-          ]
+            {
+              title: "What is Utility?",
+              content:
+                "Utility is the satisfaction or benefit derived from consuming a product.",
+            },
+            {
+              title: "Law of Diminishing Marginal Utility",
+              content:
+                "As more of a good is consumed, the additional satisfaction from another unit decreases.",
+            },
+          ],
         },
         {
           id: "lec2",
@@ -444,10 +473,10 @@ const CONTENT = {
           id: "pol1",
           title: "Introduction to Political Science",
           type: "file",
-          content: "./pdfs/political-science/Intro.pdf"
-        }
-      ]
-    ]
+          content: "./pdfs/political-science/Intro.pdf",
+        },
+      ],
+    ],
   },
   //-------------------------------------------------------------
   marketing: {
@@ -541,21 +570,81 @@ const CONTENT = {
   //-------------------------------------------------------------
   statistics: {
     "course-content": [
+      // Chapter 1
+      [],
+      [], // Chapter 2
+      [], // Chapter 3
+      [], // Chapter 4
+    ],
+    videos: [
+      // Chapter 1
+      [
+        // {
+        //   id: "vid1",
+        //   title: "Lect 1-2 Dr.Eman",
+        //   type: "video",
+        //   content: "./pdfs/english/Lect 1-2.mp4",
+        // },
+        // {
+        //   id: "vid2",
+        //   title: "Lect 3 Dr.Eman",
+        //   type: "video",
+        //   content: "./pdfs/english/Lect 3 (English) (S.O).mp4",
+        // },
+        // {
+        //   id: "vid3",
+        //   title: "Lect 4 Dr.Eman",
+        //   type: "video",
+        //   content: "./pdfs/english/Lect 4 (English) (S.O).mp4",
+        // },
+      ],
+      [], // Chapter 2
+      [], // Chapter 3
+    ],
+    qa: [
+      // Chapter 1
       [
         {
-          id: "stat1",
-          title: "Probability Distribution",
+          id: "lec1",
+          title: "All Assignments Dr.Magda",
           type: "file",
-          content: "./pdfs/statistics/Prob_Dist.pdf",
-          interactive: [
-            { title: "Random Variables", content: "A random variable is a numerical description of the outcome of an experiment." },
-            { title: "Discrete vs Continuous", content: "Discrete variables have countable outcomes, while continuous variables can take any value in an interval." },
-            { title: "Expected Value", content: "The mean or expected value of a random variable is the weighted average of all possible values." }
-          ]
-        }
-      ]
-    ]
+          content: "./pdfs/statistics/All Assignments For Dr Magda.pdf",
+        },
+      ],
+      [], // Chapter 2
+      [], // Chapter 3
+      [], // Chapter 4
+    ],
   },
+  // statistics: {
+  //   "course-content": [
+  //     [
+  //       {
+  //         id: "stat1",
+  //         title: "Probability Distribution",
+  //         type: "file",
+  //         content: "./pdfs/statistics/Prob_Dist.pdf",
+  //         interactive: [
+  //           {
+  //             title: "Random Variables",
+  //             content:
+  //               "A random variable is a numerical description of the outcome of an experiment.",
+  //           },
+  //           {
+  //             title: "Discrete vs Continuous",
+  //             content:
+  //               "Discrete variables have countable outcomes, while continuous variables can take any value in an interval.",
+  //           },
+  //           {
+  //             title: "Expected Value",
+  //             content:
+  //               "The mean or expected value of a random variable is the weighted average of all possible values.",
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   ],
+  // },
   //----------------------------------------------
   ais: {
     "course-content": [
