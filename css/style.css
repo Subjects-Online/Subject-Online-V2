@@ -1554,11 +1554,25 @@ body {
   line-height: 1.6;
   margin: 0;
 }
-.greeting-wrap .g-text {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.greeting-wrap .g-text { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+/* ==================== BUBBLES ==================== */
+.fav-bubbles-wrap { margin-top: 32px; text-align: center; }
+.bubbles-label { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; opacity: 0.8; }
+.bubbles-grid { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.fav-bubble { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; background: var(--surface); border: 2px solid rgba(255,255,255,0.1); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.fav-bubble:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.4); z-index: 2; }
+.fav-bubble::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; background: inherit; filter: blur(15px); opacity: 0; transition: opacity 0.4s; z-index: -1; }
+.fav-bubble:hover::after { opacity: 0.4; }
+
+/* Settings fav subs grid */
+.fav-subs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; max-height: 200px; overflow-y: auto; }
+.fav-sub-check { position: relative; }
+.fav-sub-check input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+.fav-sub-check label { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); font-size: 13px; font-weight: 600; cursor: pointer; transition: all var(--tr); }
+.fav-sub-check input:checked + label { border-color: var(--accent); background: rgba(124, 58, 237, 0.1); color: var(--accent); }
+
+@media (max-width: 600px) {
+  .fav-bubble { width: 52px; height: 52px; font-size: 22px; }
 }
 
 /* ==================== SETTINGS PAGE ==================== */

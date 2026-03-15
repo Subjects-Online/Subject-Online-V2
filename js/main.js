@@ -6,9 +6,15 @@
 
 // ===== THEME & SETTINGS =====
 function getSettings() {
-  const defaults = { name: "", theme: "dark", favSubject: "", sortMode: "default", customOrder: [] };
+  const defaults = { name: "", theme: "dark", favSubjects: [], sortMode: "default", customOrder: [] };
   const saved = localStorage.getItem("so_settings");
-  return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+  const res = saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
+  // Migrate old favSubject if exists
+  const oldSaved = JSON.parse(saved || "{}");
+  if (oldSaved.favSubject && res.favSubjects.length === 0) {
+    res.favSubjects = [oldSaved.favSubject];
+  }
+  return res;
 }
 function updateSettings(newSettings) {
   const current = getSettings();
@@ -133,13 +139,16 @@ function renderSubjectCards() {
     });
   }
   
-  // If a favorite subject is set, bring it to front
-  if (settings.favSubject) {
-    const favIdx = sortedSubjects.findIndex(s => s.id === settings.favSubject);
-    if (favIdx > -1) {
-      const [fav] = sortedSubjects.splice(favIdx, 1);
-      sortedSubjects.unshift(fav);
-    }
+  // If favorite subjects are set, bring them to front
+  if (settings.favSubjects && settings.favSubjects.length > 0) {
+    const favs = [];
+    const rest = [];
+    sortedSubjects.forEach(s => {
+      if (settings.favSubjects.includes(s.id)) favs.push(s);
+      else rest.push(s);
+    });
+    // Sort favs by current sortMode? Let's just keep them together.
+    sortedSubjects = [...favs, ...rest];
   }
 
   grid.innerHTML = sortedSubjects.map((s, i) => {
@@ -622,22 +631,44 @@ function renderGreeting() {
   const heroEye = document.querySelector(".hero-eye");
   const heroTitle = document.querySelector(".hero-title");
   const heroSub = document.querySelector(".hero-sub");
+  const heroCta = document.querySelector(".hero-cta");
 
   if (settings.name) {
     if (heroEye) heroEye.style.display = "none";
     if (heroTitle) heroTitle.style.display = "none";
     if (heroSub) heroSub.style.display = "none";
+    if (heroCta) heroCta.style.display = "none";
+
+    // Fav Bubbles
+    let bubblesHtml = "";
+    if (settings.favSubjects && settings.favSubjects.length > 0 && typeof SUBJECTS !== "undefined") {
+      const favs = SUBJECTS.filter(s => settings.favSubjects.includes(s.id));
+      bubblesHtml = `
+        <div class="fav-bubbles-wrap au as">
+          <div class="bubbles-label">Quick Access</div>
+          <div class="bubbles-grid">
+            ${favs.map(s => `
+              <a href="subject.html?id=${s.id}" class="fav-bubble" title="${s.name}" style="background:linear-gradient(${s.grad})">
+                <span>${s.icon}</span>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
 
     container.innerHTML = `
       <div class="greeting-wrap au d1">
         <h2>Hello, <span class="g-text">${settings.name}</span>! 👋</h2>
         <p>Glad to see you back. What subject are you going to master today?</p>
+        ${bubblesHtml}
       </div>
     `;
   } else {
     if (heroEye) heroEye.style.display = "";
     if (heroTitle) heroTitle.style.display = "";
     if (heroSub) heroSub.style.display = "";
+    if (heroCta) heroCta.style.display = "";
     container.innerHTML = "";
   }
 }
@@ -659,10 +690,14 @@ function renderSettingsPage() {
   const themeSelect = document.getElementById("set-theme");
   if (themeSelect) themeSelect.value = settings.theme || "dark";
   
-  const favSubjectSelect = document.getElementById("set-fav-sub");
-  if (favSubjectSelect) {
-    favSubjectSelect.innerHTML = `<option value="">None</option>` + 
-      SUBJECTS.map(s => `<option value="${s.id}" ${settings.favSubject === s.id ? "selected" : ""}>${s.name}</option>`).join("");
+  const favSubjectsSelect = document.getElementById("set-fav-subs");
+  if (favSubjectsSelect) {
+    favSubjectsSelect.innerHTML = SUBJECTS.map(s => `
+      <div class="fav-sub-check">
+        <input type="checkbox" id="fav-${s.id}" value="${s.id}" ${settings.favSubjects && settings.favSubjects.includes(s.id) ? "checked" : ""}>
+        <label for="fav-${s.id}"><span>${s.icon}</span> ${s.name}</label>
+      </div>
+    `).join("");
   }
 
   // Custom Order List
@@ -711,10 +746,13 @@ window.saveUserSettings = function() {
   const name = document.getElementById("set-name").value;
   const sortMode = document.getElementById("set-sort").value;
   const theme = document.getElementById("set-theme").value;
-  const favSubject = document.getElementById("set-fav-sub").value;
+  
+  const favSubjects = [];
+  document.querySelectorAll("#set-fav-subs input:checked").forEach(cb => favSubjects.push(cb.value));
+
   const customOrder = [..._localCustomOrder];
   
-  updateSettings({ name, sortMode, theme, favSubject, customOrder });
+  updateSettings({ name, sortMode, theme, favSubjects, customOrder });
   
   // Apply theme immediately
   document.documentElement.setAttribute("data-theme", theme);
