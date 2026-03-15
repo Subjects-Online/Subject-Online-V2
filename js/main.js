@@ -6,7 +6,7 @@
 
 // ===== THEME & SETTINGS =====
 function getSettings() {
-  const defaults = { name: "", theme: "dark", favSubjects: [], sortMode: "default", customOrder: [] };
+  const defaults = { name: "", theme: "dark", favSubjects: [], sortMode: "default", customOrder: [], accentColor: "#7c3aed" };
   const saved = localStorage.getItem("so_settings");
   const res = saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
   // Migrate old favSubject if exists
@@ -26,7 +26,18 @@ function initTheme() {
   const settings = getSettings();
   const theme = settings.theme || "dark";
   document.documentElement.setAttribute("data-theme", theme);
+  applyAccentColor(settings.accentColor || "#7c3aed");
   updateThemeBtn(theme);
+}
+function applyAccentColor(color) {
+  if (!color) return;
+  const root = document.documentElement;
+  root.style.setProperty('--accent', color);
+  // Optional: lighter/darker shades or secondary colors
+  // For simplicity, let's just use the color provided and a slightly transparent version for glow
+  root.style.setProperty('--glow', `${color}4d`); // 4d = ~30% alpha
+  // If we want a gradient effect, we can derive a second color or just use the same
+  root.style.setProperty('--accent2', color); 
 }
 function toggleTheme() {
   const current = document.documentElement.getAttribute("data-theme");
@@ -433,6 +444,7 @@ function openViewer(lec, subjectId) {
   document.body.style.overflow = "hidden";
 
   if (subjectId && lec.content) {
+    trackRecent({ id: lec.id, sid: subjectId, name: lec.title || "Lecture", type: lec.type || (lec.content.endsWith(".pdf") ? "pdf" : "video") });
     // Save as pending instead of auto-completing
     localStorage.setItem("so_pending_progress", JSON.stringify({
       subjectId,
@@ -690,6 +702,9 @@ function renderSettingsPage() {
   const themeSelect = document.getElementById("set-theme");
   if (themeSelect) themeSelect.value = settings.theme || "dark";
   
+  const colorInput = document.getElementById("set-color");
+  if (colorInput) colorInput.value = settings.accentColor || "#7c3aed";
+
   const favSubjectsSelect = document.getElementById("set-fav-subs");
   if (favSubjectsSelect) {
     favSubjectsSelect.innerHTML = SUBJECTS.map(s => `
@@ -746,16 +761,18 @@ window.saveUserSettings = function() {
   const name = document.getElementById("set-name").value;
   const sortMode = document.getElementById("set-sort").value;
   const theme = document.getElementById("set-theme").value;
+  const accentColor = document.getElementById("set-color").value;
   
   const favSubjects = [];
   document.querySelectorAll("#set-fav-subs input:checked").forEach(cb => favSubjects.push(cb.value));
 
   const customOrder = [..._localCustomOrder];
   
-  updateSettings({ name, sortMode, theme, favSubjects, customOrder });
+  updateSettings({ name, sortMode, theme, favSubjects, customOrder, accentColor });
   
-  // Apply theme immediately
+  // Apply changes immediately
   document.documentElement.setAttribute("data-theme", theme);
+  applyAccentColor(accentColor);
   updateThemeBtn(theme);
   
   const saveBtn = document.querySelector(".save-settings-btn");
@@ -970,6 +987,96 @@ function initAiAssistant() {
   });
 }
 
+// ===== GLOBAL SEARCH =====
+function initSearch() {
+  const input = document.getElementById("global-search");
+  const resultsBox = document.getElementById("search-results");
+  if (!input || !resultsBox) return;
+
+  input.addEventListener("input", (e) => {
+    const query = e.target.value.trim().toLowerCase();
+    if (!query) {
+      resultsBox.classList.remove("open");
+      return;
+    }
+
+    const results = [];
+    
+    // Search Subjects
+    if (typeof SUBJECTS !== "undefined") {
+      SUBJECTS.forEach(s => {
+        if (s.name.toLowerCase().includes(query)) {
+          results.push({ type: 'subject', id: s.id, name: s.name, icon: s.icon });
+        }
+      });
+    }
+
+    // Search Content (Lects)
+    if (typeof CONTENT !== "undefined") {
+      Object.entries(CONTENT).forEach(([sid, sections]) => {
+        const sub = SUBJECTS.find(s => s.id === sid);
+        Object.values(sections).forEach(chapters => {
+          chapters.forEach(ch => {
+            ch.forEach(lec => {
+              if (lec.name.toLowerCase().includes(query)) {
+                results.push({ 
+                  type: lec.type || 'file', 
+                  sid: sid, 
+                  sname: sub ? sub.name : '', 
+                  name: lec.name, 
+                  link: lec.link 
+                });
+              }
+            });
+          });
+        });
+      });
+    }
+
+    renderSearchResults(results.slice(0, 8)); // Limit to 8
+  });
+
+  // Close search when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!input.contains(e.target) && !resultsBox.contains(e.target)) {
+      resultsBox.classList.remove("open");
+    }
+  });
+}
+
+function renderSearchResults(results) {
+  const box = document.getElementById("search-results");
+  if (results.length === 0) {
+    box.innerHTML = `<div class="search-no-results" style="padding:16px; text-align:center; color:var(--muted);">No results found.</div>`;
+  } else {
+    box.innerHTML = results.map(r => {
+      if (r.type === 'subject') {
+        return `
+          <a href="subject.html?id=${r.id}" class="search-result-item">
+            <span class="sr-icon">${r.icon}</span>
+            <div class="sr-info">
+              <div class="sr-name">${r.name}</div>
+              <div class="sr-type">Subject</div>
+            </div>
+          </a>
+        `;
+      } else {
+        const icon = r.type === 'video' ? '🎬' : '📄';
+        return `
+          <a href="subject.html?id=${r.sid}" class="search-result-item">
+            <span class="sr-icon">${icon}</span>
+            <div class="sr-info">
+              <div class="sr-name">${r.name}</div>
+              <div class="sr-type">${r.sname} • ${r.type.toUpperCase()}</div>
+            </div>
+          </a>
+        `;
+      }
+    }).join("");
+  }
+  box.classList.add("open");
+}
+
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
@@ -982,5 +1089,156 @@ document.addEventListener("DOMContentLoaded", () => {
   initAiAssistant();
   renderFavoritesPage();
   renderGreeting();
+  initSearch();
+  renderRecents();
+  renderDashboard();
   renderSettingsPage();
 });
+
+// ===== DASHBOARD =====
+function renderDashboard() {
+  const container = document.querySelector(".dashboard-page");
+  if (!container) return;
+
+  const settings = getSettings();
+  const progress = JSON.parse(localStorage.getItem("so_progress") || "{}");
+  const recents = JSON.parse(localStorage.getItem("so_recents") || "[]");
+
+  // Hello Greeting
+  const dashGreeting = document.getElementById("dash-greeting");
+  if (dashGreeting && settings.name) {
+    dashGreeting.querySelector("h2").textContent = `Hello, ${settings.name}! 👋`;
+  }
+
+  // Global Calculation
+  let totalPdfs = 0, donePdfs = 0;
+  let totalVids = 0, doneVids = 0;
+
+  SUBJECTS.forEach(s => {
+    const subTotals = getSubjectTotals(s.id);
+    totalPdfs += subTotals.pdfs;
+    totalVids += subTotals.videos;
+
+    const subProg = progress[s.id] || { pdfs: [], videos: [] };
+    donePdfs += subProg.pdfs.length;
+    doneVids += subProg.videos.length;
+  });
+
+  document.getElementById("gs-subjects").textContent = SUBJECTS.length;
+  document.getElementById("gs-pdfs").textContent = `${donePdfs}/${totalPdfs}`;
+  document.getElementById("gs-videos").textContent = `${doneVids}/${totalVids}`;
+
+  // Subject List
+  const subGrid = document.getElementById("dash-subject-list");
+  if (subGrid) {
+    subGrid.innerHTML = SUBJECTS.map(s => {
+      const tot = getSubjectTotals(s.id);
+      const prg = progress[s.id] || { pdfs: [], videos: [] };
+      const pct = tot.pdfs + tot.videos > 0 ? Math.round(((prg.pdfs.length + prg.videos.length) / (tot.pdfs + tot.videos)) * 100) : 0;
+      
+      return `
+        <div class="dash-item au">
+          <div class="di-left">
+            <div class="di-icon" style="background:linear-gradient(${s.grad})">${s.icon}</div>
+            <div class="di-info">
+              <div class="di-name">${s.name}</div>
+              <div class="di-meta">${prg.pdfs.length + prg.videos.length} items completed</div>
+            </div>
+          </div>
+          <div class="di-right">
+            <div class="di-pct">${pct}%</div>
+            <div class="di-bar-bg"><div class="di-bar-fg" style="width:${pct}%; background:${s.color}"></div></div>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // Recent List
+  const recGrid = document.getElementById("dash-recent-list");
+  if (recGrid) {
+    if (recents.length === 0) {
+      recGrid.innerHTML = `<div style="padding:40px; text-align:center; color:var(--muted);">No recent activity. Start studying!</div>`;
+    } else {
+      recGrid.innerHTML = recents.map(r => {
+        const sub = SUBJECTS.find(s => s.id === r.sid);
+        const icon = r.type === "video" ? "🎬" : "📄";
+        return `
+          <div class="dash-item au">
+             <div class="di-left">
+                <div class="di-icon" style="background:var(--surface)">${icon}</div>
+                <div class="di-info">
+                  <div class="di-name">${r.name}</div>
+                  <div class="di-meta">${sub ? sub.name : ''}</div>
+                </div>
+             </div>
+             <a href="subject.html?id=${r.sid}" class="btn btn-primary" style="padding:6px 12px; font-size:12px">Resume</a>
+          </div>
+        `;
+      }).join("");
+    }
+  }
+}
+
+function getSubjectTotals(subjectId) {
+  let pdfs = 0, videos = 0;
+  if (typeof CONTENT !== "undefined" && CONTENT[subjectId]) {
+    Object.values(CONTENT[subjectId]).forEach(sections => {
+      sections.forEach(chapters => {
+        chapters.forEach(lec => {
+          if (lec.content) {
+            if (lec.type === "video") videos++; else pdfs++;
+          }
+        });
+      });
+    });
+  }
+  return { pdfs, videos };
+}
+
+
+// ===== RECENTLY VIEWED =====
+function trackRecent(item) {
+  // item { id, sid, name, type }
+  const settings = getSettings();
+  let recents = JSON.parse(localStorage.getItem("so_recents") || "[]");
+  
+  // Remove duplicate
+  recents = recents.filter(r => r.name !== item.name || r.sid !== item.sid);
+  
+  // Add to front
+  recents.unshift(item);
+  
+  // Keep last 4
+  localStorage.setItem("so_recents", JSON.stringify(recents.slice(0, 4)));
+}
+
+function renderRecents() {
+  const container = document.getElementById("recents-section");
+  const grid = document.getElementById("recents-grid");
+  if (!container || !grid) return;
+
+  const recents = JSON.parse(localStorage.getItem("so_recents") || "[]");
+  if (recents.length === 0) {
+    container.style.display = "none";
+    return;
+  }
+
+  container.style.display = "block";
+  const subjects = typeof SUBJECTS !== "undefined" ? SUBJECTS : [];
+  
+  grid.innerHTML = recents.map(r => {
+    const sub = subjects.find(s => s.id === r.sid);
+    const icon = r.type === "video" ? "🎬" : "📄";
+    return `
+      <a href="subject.html?id=${r.sid}" class="recent-card au">
+        <div class="rc-icon" style="background:linear-gradient(${sub ? sub.grad : 'var(--surface), var(--surface)'})">${icon}</div>
+        <div class="rc-info">
+          <div class="rc-name">${r.name}</div>
+          <div class="rc-subj">${sub ? sub.name : ''}</div>
+        </div>
+      </a>
+    `;
+  }).join("");
+}
+

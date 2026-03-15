@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard — Subjects Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span>📚</span><span class="logo-text">Subjects<span class="logo-accent">Online</span></span></a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="subjects.html" class="nav-link">Browse Subjects</a>
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="favorites.html" class="nav-link">Favorites</a>
+        <a href="settings.html" class="nav-link">Settings</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-btn" onclick="toggleTheme()"><span class="theme-ico">🌙</span><span class="theme-label">Dark</span></button>
+        <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="subjects.html" class="mobile-link">Browse Subjects</a>
+      <a href="dashboard.html" class="mobile-link">Dashboard</a>
+      <a href="favorites.html" class="mobile-link">Favorites</a>
+      <a href="settings.html" class="mobile-link">Settings</a>
+      <button class="theme-btn" style="margin-top:16px;width:100%" onclick="toggleTheme()"><span class="theme-ico">🌙</span><span class="theme-label">Dark</span></button>
+    </div>
+  </div>
+  <div class="menu-backdrop"></div>
+
+  <div class="page dashboard-page">
+    <div class="bg-wrap">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="grid-bg"></div>
+    </div>
+
+    <div class="container">
+      <div class="dash-grid">
+        <!-- TOP STATS -->
+        <div class="dash-card au d1 stat-main">
+          <div class="greeting-box" id="dash-greeting">
+            <h2>Hello! 👋</h2>
+            <p>Ready to see your progress?</p>
+          </div>
+          <div class="global-stats-row">
+             <div class="g-stat">
+               <span class="gs-val" id="gs-subjects">0</span>
+               <span class="gs-lbl">Subjects</span>
+             </div>
+             <div class="g-stat">
+               <span class="gs-val" id="gs-pdfs">0/0</span>
+               <span class="gs-lbl">PDFs Done</span>
+             </div>
+             <div class="g-stat">
+               <span class="gs-val" id="gs-videos">0/0</span>
+               <span class="gs-lbl">Videos Done</span>
+             </div>
+          </div>
+        </div>
+
+        <!-- SUBJECT BREAKDOWN -->
+        <div class="dash-card au d2">
+          <div class="card-hdr">
+            <span>📊</span>
+            <h3>Subject Breakdown</h3>
+          </div>
+          <div class="dash-list" id="dash-subject-list">
+             <!-- Dynamically filled -->
+          </div>
+        </div>
+
+        <!-- RECENT ACTIVITY -->
+        <div class="dash-card au d3">
+          <div class="card-hdr">
+            <span>🕒</span>
+            <h3>Recent Activity</h3>
+          </div>
+          <div class="dash-list" id="dash-recent-list">
+             <!-- Dynamically filled -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
