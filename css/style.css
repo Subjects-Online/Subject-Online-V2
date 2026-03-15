@@ -127,7 +127,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .home-cards-sec{position:relative;z-index:1;padding:20px 0 80px}
 .cards-label{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:48px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
 .cards-label span.line{flex:1;max-width:120px;height:1px;background:var(--border)}
-.home-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.home-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .feat-card{position:relative;display:flex;flex-direction:column;gap:16px;padding:0 0 28px;background:var(--card);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--border);border-radius:24px;text-decoration:none;color:var(--text);overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
 .feat-card:hover{transform:translateY(-10px);border-color:var(--border-h);box-shadow:0 30px 80px rgba(0,0,0,.25)}
 .fc-bar{height:4px;width:100%;flex-shrink:0}
@@ -181,7 +181,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .banner-left h3{font-size:20px;font-weight:800;margin-bottom:6px}
 .banner-left p{color:var(--muted);font-size:14px}
 
-@media(max-width:900px){.home-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
+@media(max-width:1100px){.home-cards{grid-template-columns:repeat(2,1fr);max-width:800px;margin:0 auto}}
+@media(max-width:700px){.home-cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}}
 @media(max-width:600px){.hero-title{letter-spacing:-1.5px}.banner-card{flex-direction:column;text-align:center}.banner-left{flex-direction:column}}
 
 /* ==================== BROWSE SUBJECTS ==================== */
