@@ -1018,13 +1018,13 @@ function initSearch() {
         Object.values(sections).forEach(chapters => {
           chapters.forEach(ch => {
             ch.forEach(lec => {
-              if (lec.name.toLowerCase().includes(query)) {
+              if (lec.title && lec.title.toLowerCase().includes(query)) {
                 results.push({ 
                   type: lec.type || 'file', 
                   sid: sid, 
                   sname: sub ? sub.name : '', 
-                  name: lec.name, 
-                  link: lec.link 
+                  name: lec.title, 
+                  link: lec.content 
                 });
               }
             });
