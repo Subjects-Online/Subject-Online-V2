@@ -674,6 +674,12 @@ const CONTENT = {
         },
         {
           id: "lec5",
+          title: "Lect 5 Dr.Magda",
+          type: "file",
+          content: "./pdfs/statistics/Lect 5 (Stat) (S.O V2).pdf",
+        },
+        {
+          id: "lec5",
           title: "Lect1-4 'HandWriting' Dr.Magda",
           type: "file",
           content: "./pdfs/statistics/Lect1-4(Stat) (S.O).pdf",
