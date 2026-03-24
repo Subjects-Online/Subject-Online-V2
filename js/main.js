@@ -1249,7 +1249,7 @@ function initAiAssistant() {
   const fab = document.createElement("button");
   fab.className = "ai-fab au";
   fab.style.animationDelay = "0.5s";
-  fab.innerHTML = "✨";
+  fab.innerHTML = "AT";
   body.appendChild(fab);
 
   const panel = document.createElement("div");
@@ -1257,41 +1257,61 @@ function initAiAssistant() {
   panel.innerHTML = `
     <div class="ai-header">
       <div class="ai-h-left">
-        <span class="ai-h-icon">✨</span>
+        <span class="ai-h-icon">AT</span>
         <div>
-          <div class="ai-h-title">Gemini AI Tutor</div>
+          <div class="ai-h-title">AT AI Tutor</div>
           <div class="ai-h-sub">Always here to help</div>
         </div>
       </div>
-      <button class="ai-close">✕</button>
+      <div style="display: flex; gap: 8px;">
+        <button class="ai-clear" title="مسح المحادثة" style="background:none; border:none; color:white; cursor:pointer; font-size:16px;">🗑️</button>
+        <button class="ai-close" style="background:none; border:none; color:white; cursor:pointer; font-size:16px;">✕</button>
+      </div>
     </div>
     <div class="ai-messages" id="ai-messages">
-      <div class="ai-msg ai-msg-bot" dir="auto">أهلاً بيك! أنا الـ AI Tutor بتاعك، جاهز أساعدك في أي وقت. اسألني أي حاجة.</div>
+      <div class="ai-msg ai-msg-bot" dir="auto">أهلاً بيك! أنا الـ AT AI Tutor بتاعك، جاهز أساعدك في أي وقت. اسألني أي حاجة.</div>
     </div>
     <div class="ai-input-area">
-      <input type="text" class="ai-input" id="ai-input" placeholder="اسألني أي حاجة..." autocomplete="off">
+      <input type="text" class="ai-input" id="ai-input" placeholder="اسألني عن أي حاجة..." autocomplete="off">
       <button class="ai-send" id="ai-send">↑</button>
     </div>
   `;
   body.appendChild(panel);
 
   const closeBtn = panel.querySelector(".ai-close");
+  const clearBtn = panel.querySelector(".ai-clear");
   const msgsContainer = panel.querySelector("#ai-messages");
   const inputEl = panel.querySelector("#ai-input");
   const sendBtn = panel.querySelector("#ai-send");
+
+  let chatHistory = JSON.parse(localStorage.getItem("so_ai_history") || "[]");
 
   // Toggle panel
   fab.addEventListener("click", () => panel.classList.add("open"));
   closeBtn.addEventListener("click", () => panel.classList.remove("open"));
 
-  const appendMsg = (text, isUser) => {
+  clearBtn.addEventListener("click", () => {
+    if (confirm("هل تريد مسح المحادثة بالكامل؟")) {
+      chatHistory = [];
+      localStorage.removeItem("so_ai_history");
+      msgsContainer.innerHTML = '<div class="ai-msg ai-msg-bot" dir="auto">أهلاً بيك! أنا الـ AT AI Tutor بتاعك، جاهز أساعدك في أي وقت. اسألني أي حاجة.</div>';
+    }
+  });
+
+  const appendMsg = (text, isUser, isRestore = false) => {
     const d = document.createElement("div");
     d.className = "ai-msg " + (isUser ? "ai-msg-user" : "ai-msg-bot");
     d.dir = "auto";
     d.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
     msgsContainer.appendChild(d);
-    msgsContainer.scrollTop = msgsContainer.scrollHeight;
+    if (!isRestore) msgsContainer.scrollTop = msgsContainer.scrollHeight;
   };
+
+  // Restore history on load
+  if (chatHistory.length > 0) {
+    chatHistory.forEach(msg => appendMsg(msg.content, msg.role === "user", true));
+    setTimeout(() => msgsContainer.scrollTop = msgsContainer.scrollHeight, 100);
+  }
 
   const showTyping = () => {
     const d = document.createElement("div");
@@ -1313,6 +1333,9 @@ function initAiAssistant() {
     inputEl.value = "";
 
     appendMsg(text, true);
+
+    chatHistory.push({ role: "user", content: text });
+    localStorage.setItem("so_ai_history", JSON.stringify(chatHistory));
 
     const apiKey = typeof GROQ_API_KEY !== 'undefined' ? GROQ_API_KEY : "YOUR_GROQ_API_KEY_HERE";
 
@@ -1357,10 +1380,10 @@ ${buildSiteContext()}
 متكتبش الأكواد دي غير لو هو طلب منك تفتح حاجة.`;
               })()
             },
-            {
-              role: "user",
-              content: text
-            }
+            ...chatHistory.slice(-20).map(m => ({
+              role: m.role,
+              content: m.content
+            }))
           ],
           max_tokens: 4096,
           temperature: 0.3
@@ -1385,7 +1408,12 @@ ${buildSiteContext()}
 
         // Remove the action tags from the visible message
         aiText = aiText.replace(actionRegex, "").trim();
-        if (aiText) appendMsg(aiText, false);
+        if (aiText) {
+          appendMsg(aiText, false);
+          chatHistory.push({ role: "assistant", content: aiText });
+          if (chatHistory.length > 50) chatHistory = chatHistory.slice(-50);
+          localStorage.setItem("so_ai_history", JSON.stringify(chatHistory));
+        }
       } else {
         appendMsg("I'm sorry, I couldn't generate a response.", false);
       }
