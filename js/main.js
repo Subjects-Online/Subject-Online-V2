@@ -284,22 +284,18 @@ function renderSubjectCards() {
   grid.innerHTML = sortedSubjects.map((s, i) => {
     const isFav = isFavorite("subject", s.id);
     return `
-    <a href="subject.html?id=${s.id}" class="subject-card" style="animation-delay:${i * 0.07}s">
-      <button class="fav-btn ${isFav ? 'active' : ''}" onclick="toggleFavorite(event, 'subject', '${s.id}')" title="Toggle Favorite">${isFav ? '⭐' : '☆'}</button>
-      <div class="sc-glow" style="background:linear-gradient(${s.grad})"></div>
-      <div class="sc-icon" style="background:linear-gradient(${s.grad})">
-        <span>${s.icon}</span>
+    <a href="subject.html?id=${s.id}" class="subject-card au" style="animation-delay:${i * 0.07}s; --fc-color: ${s.color}; --fc-grad: linear-gradient(${s.grad})">
+      <div class="fc-top">
+        <div class="fc-icon" style="background: var(--fc-grad)">${s.icon}</div>
+        <button class="fav-btn ${isFav ? 'active' : ''} sc-fav-override" onclick="toggleFavorite(event, 'subject', '${s.id}')" title="Toggle Favorite">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </button>
       </div>
-      <div>
-        <div class="sc-tag">${s.nameAr}</div>
-        <div class="sc-name">${s.name}</div>
-        <div class="sc-desc">${s.desc}</div>
+      <div class="fc-bottom">
+        <h3 class="fc-title">${s.name}</h3>
+        <p class="fc-desc-short">${s.nameAr} • 7 Sections</p>
       </div>
-      <div class="sc-footer">
-        <span class="sc-meta">7 Sections</span>
-        <span class="sc-arr" style="color:${s.color}">→</span>
-      </div>
-      <div class="sc-accent" style="background:linear-gradient(${s.grad})"></div>
+      <div class="fc-glow" style="background: var(--fc-grad)"></div>
     </a>
   `;
   }).join("");
@@ -1285,17 +1281,18 @@ function renderFavoritesPage() {
       subjGrid.innerHTML = `<div class="fav-empty"><span>📭</span><p>You haven't favorited any subjects yet.</p></div>`;
     } else {
       subjGrid.innerHTML = SUBJECTS.filter(s => favs.subjects.includes(s.id)).map((s, i) => `
-        <a href="subject.html?id=${s.id}" class="subject-card" style="animation-delay:${i * 0.05}s">
-          <button class="fav-btn active" onclick="toggleFavorite(event, 'subject', '${s.id}'); renderFavoritesPage();" title="Remove Favorite">⭐</button>
-          <div class="sc-glow" style="background:linear-gradient(${s.grad})"></div>
-          <div class="sc-icon" style="background:linear-gradient(${s.grad})">
-            <span>${s.icon}</span>
+        <a href="subject.html?id=${s.id}" class="subject-card au" style="animation-delay:${i * 0.05}s; --fc-color: ${s.color}; --fc-grad: linear-gradient(${s.grad})">
+          <div class="fc-top">
+            <div class="fc-icon" style="background: var(--fc-grad)">${s.icon}</div>
+            <button class="fav-btn active sc-fav-override" onclick="toggleFavorite(event, 'subject', '${s.id}'); renderFavoritesPage();" title="Remove Favorite">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </button>
           </div>
-          <div>
-            <div class="sc-tag">${s.nameAr}</div>
-            <div class="sc-name">${s.name}</div>
+          <div class="fc-bottom">
+            <h3 class="fc-title">${s.name}</h3>
+            <p class="fc-desc-short">${s.nameAr} • 7 Sections</p>
           </div>
-          <div class="sc-accent" style="background:linear-gradient(${s.grad})"></div>
+          <div class="fc-glow" style="background: var(--fc-grad)"></div>
         </a>
       `).join("");
     }
