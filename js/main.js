@@ -327,25 +327,21 @@ function renderHomeCards() {
   ];
 
   container.innerHTML = cards.map((c, i) => `
-    <a href="${c.href}" class="feat-card au" style="animation-delay:${0.1 + i * 0.12}s">
-      <div class="fc-bar" style="background:linear-gradient(${c.grad})"></div>
-      <div class="fc-head">
-        <div class="fc-icon" style="background:linear-gradient(${c.grad})">${c.icon}</div>
-        <div class="fc-tags">
-          <span class="fc-tag">${c.tag1}</span>
-          <span class="fc-tag">${c.tag2}</span>
+    <a href="${c.href}" class="feat-card au" style="animation-delay:${0.1 + i * 0.12}s; --fc-color: ${c.color}; --fc-grad: linear-gradient(${c.grad})">
+      <div class="fc-top">
+        <div class="fc-icon" style="background: var(--fc-grad)">${c.icon}</div>
+        <div class="fc-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </div>
       </div>
-      <h2 class="fc-title">${c.title}</h2>
-      <p class="fc-desc">${c.desc}</p>
-      <div class="fc-features">
-        ${c.pills.map(p => `<span class="fc-pill" style="border-color:${c.color}44;color:${c.color};background:${c.color}11">${p}</span>`).join("")}
+      <div class="fc-bottom">
+        <h3 class="fc-title">${c.title}</h3>
+        <p class="fc-desc-short">${c.tag1} • ${c.tag2}</p>
       </div>
-      <div class="fc-cta" style="color:${c.color}">
-        <span>Open Section</span>
-        <span class="fc-arr">→</span>
-      </div>
-      <div class="fc-glow" style="background:linear-gradient(${c.grad})"></div>
+      <div class="fc-glow" style="background: var(--fc-grad)"></div>
     </a>
   `).join("");
 

@@ -1192,153 +1192,113 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 0 0 28px;
+  justify-content: space-between;
+  min-height: 240px;
+  padding: 32px;
   background: var(--card);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 36px;
   text-decoration: none;
   color: var(--text);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .feat-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--border-h);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  transform: translateY(-8px);
+  border-color: var(--fc-color);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
 }
 
-.fc-bar {
-  height: 4px;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.fc-head {
+.fc-top {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px 24px 0;
+  align-items: flex-start;
+  margin-bottom: 32px;
 }
 
 .fc-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 32px;
   flex-shrink: 0;
-  transition: transform var(--tr);
+  color: white; /* In case emojis are swapped for svgs */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feat-card:hover .fc-icon {
-  transform: scale(1.1) rotate(-6deg);
+  transform: scale(1.1) rotate(-8deg);
 }
 
-.fc-tags {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.fc-tag {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--faint);
+.fc-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 3px 8px;
-  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fc-arrow svg {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feat-card:hover .fc-arrow {
+  background: var(--fc-color);
+  border-color: var(--fc-color);
+  color: white;
+}
+
+.feat-card:hover .fc-arrow svg {
+  transform: translate(2px, -2px);
+}
+
+.fc-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .fc-title {
   font-size: 24px;
   font-weight: 800;
   line-height: 1.2;
-  padding: 0 24px;
 }
 
-.fc-desc {
+.fc-desc-short {
   font-size: 14px;
-  color: var(--muted);
-  line-height: 1.7;
-  padding: 0 24px;
-  flex: 1;
-}
-
-.fc-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 0 24px;
-}
-
-.fc-pill {
-  font-size: 12px;
   font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 99px;
-  border: 1px solid;
-}
-
-.fc-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 20px;
-  margin: auto 24px 0;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: 99px;
-  border: 1px solid currentColor;
-  width: max-content;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: transparent;
-  opacity: 0.85;
-}
-
-.feat-card:hover .fc-cta {
-  opacity: 1;
-}
-
-.fc-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.fc-arr {
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.fc-cta:hover .fc-arr, .feat-card:hover .fc-arr {
-  transform: translateX(4px);
+  color: var(--muted);
 }
 
 .fc-glow {
   position: absolute;
-  bottom: -100px;
-  right: -100px;
+  top: 0;
+  right: 0;
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  filter: blur(80px);
   opacity: 0;
-  filter: blur(60px);
-  pointer-events: none;
-  transition: opacity 0.5s ease;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+  transform: translate(30%, -30%);
 }
 
 .feat-card:hover .fc-glow {
-  opacity: 0.15;
+  opacity: 0.2;
 }
 
 /* ==================== PROGRESS ==================== */
