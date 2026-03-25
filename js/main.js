@@ -367,7 +367,6 @@ function initSubjectPage() {
   document.getElementById("subj-icon").textContent = subject.icon;
   document.getElementById("subj-name").textContent = subject.name;
   document.getElementById("subj-name-ar").textContent = subject.nameAr;
-  document.getElementById("subj-desc").textContent = subject.desc;
   document.title = subject.name + " — Subjects Online";
 
   // Sidebar tabs
