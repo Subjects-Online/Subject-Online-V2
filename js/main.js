@@ -8,7 +8,6 @@
 // ===== THEME & SETTINGS =====
 const defaultSettings = {
   theme: 'dark',
-  festive: 'off',
   lang: 'en'
 };
 
@@ -20,7 +19,7 @@ if (typeof window !== 'undefined' && !window.lastVisitTimeSet) {
 }
 
 function getSettings() {
-  const defaults = { name: "", avatar: "", phone: "", lang: "en", theme: "dark", festive: "off", favSubjects: [], sortMode: "default", customOrder: [], accentColor: "#7c3aed" };
+  const defaults = { name: "", avatar: "", phone: "", lang: "en", theme: "dark", favSubjects: [], sortMode: "default", customOrder: [], accentColor: "#7c3aed" };
   const saved = localStorage.getItem("so_settings");
   const res = saved ? { ...defaults, ...JSON.parse(saved) } : defaults;
   return res;
@@ -41,31 +40,16 @@ function updateSettings(newSettings) {
 function initTheme() {
   const settings = getSettings();
   const theme = settings.theme || "dark";
-  const festive = settings.festive || "off";
   document.documentElement.setAttribute("data-theme", theme);
-  if (festive !== "off") {
-    document.documentElement.setAttribute("data-festive", festive);
-  } else {
-    document.documentElement.removeAttribute("data-festive");
-  }
+  document.documentElement.removeAttribute("data-festive");
   applyAccentColor(settings.accentColor || "#7c3aed");
   updateThemeBtn(theme);
-  applyFestiveIcons();
 
   if (typeof applyLanguage === 'function') {
     applyLanguage();
   }
 }
-function applyFestiveIcons() {
-  const festive = document.documentElement.getAttribute("data-festive") || "off";
-  const logoMaps = { off: "📚", kahk: "🍪", biscuit: "🍞", balloons: "🎈" };
 
-  // Update Logo Icons
-  const logoSpans = document.querySelectorAll(".nav-logo span:first-child");
-  logoSpans.forEach(s => s.textContent = logoMaps[festive] || "📚");
-
-  // Update Theme Buttons already handled by updateThemeBtn which we will enhance
-}
 function applyAccentColor(color) {
   if (!color) return;
   const root = document.documentElement;
@@ -84,27 +68,12 @@ function toggleTheme() {
   updateThemeBtn(next);
 }
 function updateThemeBtn(theme) {
-  const festive = document.documentElement.getAttribute("data-festive") || "off";
   const btns = document.querySelectorAll(".theme-btn");
-  const festiveIcons = { kahk: "🍪", biscuit: "🍞", balloons: "🎈" };
-
   btns.forEach(b => {
     const ico = b.querySelector(".theme-ico");
     const lbl = b.querySelector(".theme-label");
-    if (ico) {
-      if (festive !== "off") {
-        ico.textContent = festiveIcons[festive] || "🍪";
-      } else {
-        ico.textContent = theme === "dark" ? "🌙" : "☀️";
-      }
-    }
-    if (lbl) {
-      if (festive !== "off") {
-        lbl.textContent = festive.charAt(0).toUpperCase() + festive.slice(1);
-      } else {
-        lbl.textContent = theme === "dark" ? "Dark" : "Light";
-      }
-    }
+    if (ico) ico.textContent = theme === "dark" ? "🌙" : "☀️";
+    if (lbl) lbl.textContent = theme === "dark" ? "Dark" : "Light";
   });
 }
 
@@ -443,7 +412,7 @@ function toggleChapter(btn, color) {
   chev.style.transform = isOpen ? "rotate(180deg)" : "rotate(0)";
   item.style.borderColor = isOpen ? color : "var(--border)";
   btn.style.color = isOpen ? color : "var(--text)";
-  
+
   const checkbox = btn.querySelector(".ch-checkbox");
   const numSpan = btn.querySelector(".ch-num");
   if (isOpen) {
@@ -1079,14 +1048,14 @@ function renderGreeting() {
     const visitLbl = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[lang]?.last_visit) ? TRANSLATIONS[lang].last_visit : "Last Seen";
 
     container.innerHTML = `
-      <div class="greeting-wrap au d1" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; text-align:center;">
+      <div class="greeting-banner au d1">
         <div class="mobile-avatar" style="width:140px; height:140px; font-size:65px; border-width:6px; box-shadow: 0 10px 25px var(--glow);">${avatarHtml}</div>
-        <div>
-          <h2 style="margin:0; font-size:36px; font-weight:900; letter-spacing: -0.5px;">${greetText}, <span class="g-text">${settings.name}</span>! </h2>
-          <p style="margin:12px 0 0; font-size: 15px; color: var(--muted); display:flex; justify-content:center; gap:24px; flex-wrap:wrap; font-weight:500;">
-            <span><i style="font-style:normal; opacity: 0.8;">🕒</i> ${timeLbl}: ${timeNowStr}</span>
-            <span><i style="font-style:normal; opacity: 0.8;">📅</i> ${visitLbl}: ${lastVisitStr}</span>
-          </p>
+        <div class="greeting-content">
+          <h2 class="greet-title">${greetText}, <span class="g-text">${settings.name}</span>!</h2>
+          <div class="greet-meta" style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-top:12px;">
+            <span style="font-size: 15px; color: var(--muted); font-weight:500;"><i style="font-style:normal; opacity: 0.8;">🕒</i> ${timeLbl}: ${timeNowStr}</span>
+            <span style="font-size: 15px; color: var(--muted); font-weight:500;"><i style="font-style:normal; opacity: 0.8;">📅</i> ${visitLbl}: ${lastVisitStr}</span>
+          </div>
         </div>
       </div>
       ${bubblesHtml}

@@ -852,10 +852,17 @@ body {
 }
 
 .logo-accent {
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: inline-block;
+  background: var(--accent);
+  color: #fff !important;
+  padding: 2px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-left: 6px;
+  letter-spacing: 0.5px;
+  transform: translateY(-1px);
 }
 
 .nav-links {
@@ -1157,6 +1164,90 @@ body {
   color: var(--muted);
 }
 
+/* ==================== HOME GREETING BANNER ==================== */
+.greeting-banner {
+  background: var(--card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 50px 30px;
+  border-radius: 36px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.greeting-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.avatar-shape-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 15px 30px var(--glow));
+}
+
+.avatar-border-path {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.avatar-main-path {
+  position: absolute;
+  inset: 6px;
+  background: var(--surface);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-main-path img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-main-path span {
+  font-size: 70px;
+}
+
+.greet-meta-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.meta-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .home-cards-sec {
   position: relative;
   z-index: 1;
@@ -1549,7 +1640,12 @@ body {
   padding-bottom: 80px;
 }
 
-.browse-header, .fav-header, .pd-header, .news-header, .spec-header, .dn-header {
+.browse-header,
+.fav-header,
+.pd-header,
+.news-header,
+.spec-header,
+.dn-header {
   text-align: center;
   margin-bottom: 60px;
   background: var(--card);
@@ -1966,7 +2062,7 @@ body {
 }
 
 .ch-item.open {
-  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
 }
 
 .ch-btn {
@@ -2084,7 +2180,7 @@ body {
 .lec-item:hover {
   border-color: var(--border-h);
   transform: translateX(4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .lec-left {
@@ -3133,6 +3229,7 @@ body {
     gap: 22px;
   }
 }
+
 @media (max-width: 600px) {
 
   .subj-icon {
