@@ -458,6 +458,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/english/Lect 4 (English) (S.O).mp4",
         },
+        {
+          id: "vid4",
+          title: "Lect 5 Dr.Reham",
+          type: "video",
+          content: "./pdfs/english/Lect 5 (English) (S.O V2).mp4",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
