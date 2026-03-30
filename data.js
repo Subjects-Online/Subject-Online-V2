@@ -406,6 +406,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Section 3 (Eco) Susbjects Online V2 .pdf",
         },
+        {
+          id: "lec3",
+          title: "Section 4 'Hand Writing'",
+          type: "file",
+          content: "./pdfs/economics/Eco section 4 .pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -988,7 +994,6 @@ const CONTENT = {
           type: "file",
           content: "/pdfs/ais/AIS Quiz 1.pdf",
         },
-        
       ],
 
       [], // Chapter 2
@@ -1106,6 +1111,12 @@ const CONTENT = {
           title: "section 3 'HandWriting' Dr.Abeer  ",
           type: "file",
           content: "./pdfs/Puplic/Section 3 (Public) Subjects Online V2.pdf",
+        },
+        {
+          id: "lec5",
+          title: "section 4 'HandWriting' Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Puplic section 4.pdf",
         },
       ],
     ],
