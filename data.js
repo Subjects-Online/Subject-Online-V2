@@ -206,6 +206,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Lect 5 (Acc.) (S.O V2).pdf",
         },
+        {
+          id: "lec6",
+          title: "Lect 6 Dr.MZ",
+          type: "file",
+          content: "./pdfs/accounting/Lect 6 (Acc.) (S.O V2).pdf",
+        },
       ], // Chapter 2
       [], // Chapter 3
 
@@ -252,7 +258,6 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/accounting/Lect 6 (Accounting) (S.O).mp4",
         },
-        
       ], // Chapter 2
       [], // Chapter 3
       [], // Chapter 4
