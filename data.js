@@ -297,6 +297,20 @@ const CONTENT = {
       [], // Chapter 3
       [], // Chapter 4
     ],
+    summaries: [
+      // Chapter 1
+      [
+        {
+          id: "lec1",
+          title: "Summary 1",
+          type: "file",
+          content: "./pdfs/accounting/Sum Of Lect 1 (Acc.) (S.O V2).pdf",
+        },
+      ],
+      [], // Chapter 2
+      [], // Chapter 3
+      [], // Chapter 4
+    ],
   },
 
   // ============================
