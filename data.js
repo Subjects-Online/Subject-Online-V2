@@ -1067,13 +1067,13 @@ const CONTENT = {
           id: "lec1",
           title: "Quiz 1 ",
           type: "file",
-          content: "/pdfs/ais/AIS Quiz 1.pdf",
+          content: "./pdfs/ais/AIS Quiz 1.pdf",
         },
         {
           id: "lec2",
           title: "Quiz 2 from 3/4 8 A.M to 4/4 11:59 P.M",
           type: "file",
-          content: "/pdfs/ais/AIS_Questions_and_Answers (َQuiz 2) .pdf",
+          content: "./pdfs/ais/AIS_Questions_and_Answers (َQuiz 2) .pdf",
         },
       ],
 
