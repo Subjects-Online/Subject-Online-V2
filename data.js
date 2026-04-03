@@ -888,7 +888,14 @@ const CONTENT = {
           content: "./pdfs/statistics/Lect 6 (Stat) (S.O V2).mp4",
         },
       ],
-      [], // Chapter 2
+      [
+        {
+          id: "vid7",
+          title: "Lect 7-8 Dr.Ahmed",
+          type: "video",
+          content: "./pdfs/statistics/Lect 7-8 Part 2 (stat) (S.O V2).mp4",
+        },
+      ], // Chapter 2
       [], // Chapter 3
     ],
     qa: [
