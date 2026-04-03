@@ -326,6 +326,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Sum Of Lect 4 (Acc.) (S.O V2).pdf",
         },
+        {
+          id: "lec5",
+          title: "Summary of lect 5-6",
+          type: "file",
+          content: "./pdfs/accounting/Sum Of Lect 5-6 (Acc.) (S.O V2).pdf",
+        },
       ], // Chapter 2
       [], // Chapter 3
       [], // Chapter 4
@@ -1062,6 +1068,12 @@ const CONTENT = {
           title: "Quiz 1 ",
           type: "file",
           content: "/pdfs/ais/AIS Quiz 1.pdf",
+        },
+        {
+          id: "lec2",
+          title: "Quiz 2 from 3/4 8 A.M to 4/4 11:59 P.M",
+          type: "file",
+          content: "/pdfs/ais/AIS_Questions_and_Answers (َQuiz 2) .pdf",
         },
       ],
 
