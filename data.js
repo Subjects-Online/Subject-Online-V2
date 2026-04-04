@@ -542,6 +542,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/english/Lect 6 (English) (S.O V2).pdf",
         },
+        {
+          id: "lec5",
+          title: "Lect 8 'HandWriting' Dr.Wesam",
+          type: "file",
+          content: "./pdfs/english/Lect  8 (English) (S.O V2) Hand Writing.pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -862,14 +868,15 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/statistics/Lect1-4(Stat) (S.O).pdf",
         },
+      ],
+      [
         {
           id: "lec8",
-          title: "Lect 7 'HandWriting' Dr.Magda",
+          title: "Lect 8 'HandWriting' Dr.Ahmed",
           type: "file",
-          content: "./pdfs/statistics/Lect 7 (stat) (S.O V2) Hand Writing.pdf",
+          content: "./pdfs/statistics/Lect 8 (stat) (S.O V2) Hand Writing.pdf",
         },
-      ],
-      [], // Chapter 2
+      ], // Chapter 2
       [], // Chapter 3
       [], // Chapter 4
     ],
@@ -1010,6 +1017,12 @@ const CONTENT = {
           title: "Lect 6 'HandWriting'",
           type: "file",
           content: "./pdfs/ais/Notes On Lect 6 (AIS) (S.O V2).pdf",
+        },
+        {
+          id: "lec6",
+          title: "Lect 8 'HandWriting'",
+          type: "file",
+          content: "./pdfs/ais/Lect 8 AIS (S.O V2) Hand Writing.pdf",
         },
       ], // Chapter 3
       [], // Chapter 4
