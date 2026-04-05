@@ -454,25 +454,32 @@ const CONTENT = {
       ],
       [
         {
-          id: "vid3",
+          id: "vid4",
           title: "Lect 4 Dr.Hannan",
           type: "video",
           content: "./pdfs/economics/Lect 4 (Eco) (S.O).mp4",
         },
         {
-          id: "vid3",
+          id: "vid4",
           title: "Lect 5 Dr.Hannan",
           type: "video",
           content: "./pdfs/economics/Lect 5 (Eco) (S.O).mp4",
         },
         {
-          id: "vid3",
+          id: "vid5",
           title: "Lect 6 Dr.Hannan",
           type: "video",
           content: "./pdfs/economics/Lect 6 (Eco) (S.O).mp4",
         },
       ], // Chapter 2
-      [], // Chapter 3
+      [
+        {
+          id: "vid6",
+          title: "Lect 7 Dr.Eman Part 2 ",
+          type: "video",
+          content: "./pdfs/economics/Lect 7 Eco Part 2 (S.O V2).mp4",
+        },
+      ], // Chapter 3
     ],
     sections: [
       // Chapter 1
