@@ -525,6 +525,25 @@ const CONTENT = {
       [], // Chapter 2
       [], // Chapter 3
     ],
+    summaries: [
+      // Chapter 1
+      [
+        {
+          id: "lec1",
+          title: "Sum of Lect 5",
+          type: "file",
+          content: "./pdfs/economics/Sum of Lect 5 Eco (S.O V2).pdf",
+        },
+        {
+          id: "lec2",
+          title: "Sum of Lect 5 رسومات",
+          type: "file",
+          content: "./pdfs/economics/📊 ملخص رسومات Lecture 5 - Microeconomics (S.O V2).pdf",
+        },
+      ],
+      [], // Chapter 2
+      [], // Chapter 3
+    ],
   },
   //-------------------------------------------------------------
   english: {
