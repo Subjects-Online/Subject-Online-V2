@@ -943,7 +943,7 @@ const CONTENT = {
           id: "vid4",
           title: "Lect 4 Dr.Magda",
           type: "video",
-          content: "./pdfs/statistics/Lect 4.mp4",
+          content: "./pdfs/statistics/Lect 4 (Stat) (S.O).mp4",
         },
         {
           id: "vid5",
