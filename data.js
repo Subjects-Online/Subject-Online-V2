@@ -538,7 +538,8 @@ const CONTENT = {
           id: "lec2",
           title: "Sum of Lect 5 رسومات",
           type: "file",
-          content: "./pdfs/economics/📊 ملخص رسومات Lecture 5 - Microeconomics (S.O V2).pdf",
+          content:
+            "./pdfs/economics/📊 ملخص رسومات Lecture 5 - Microeconomics (S.O V2).pdf",
         },
       ],
       [], // Chapter 2
@@ -1063,7 +1064,14 @@ const CONTENT = {
           content: "./pdfs/ais/Lect 8 AIS (S.O V2) Hand Writing.pdf",
         },
       ], // Chapter 3
-      [], // Chapter 4
+      [
+        {
+          id: "lec4",
+          title: "Lect 7 Dr.MZ",
+          type: "file",
+          content: "./pdfs/ais/Lect 7 AIS (S.O V2).pdf",
+        },
+      ], // Chapter 4
       //------
     ],
     videos: [
