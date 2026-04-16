@@ -213,7 +213,14 @@ const CONTENT = {
           content: "./pdfs/accounting/Lect 6 (Acc.) (S.O V2).pdf",
         },
       ], // Chapter 2
-      [], // Chapter 3
+      [
+        {
+          id: "lec7",
+          title: "Lect 7 part 2 Dr.MZ",
+          type: "file",
+          content: "./pdfs/accounting/Lect 7 (Acc.) (S.O V2).pdf",
+        },
+      ], // Chapter 3
 
       [], // Chapter 4
     ],
