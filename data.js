@@ -1133,7 +1133,7 @@ const CONTENT = {
         },
         {
           id: "vid8",
-          title: "Lect 1 Part 2 Dr.M.Z",
+          title: "Lect 2 Part 2 Dr.M.Z",
           type: "video",
           content: "./pdfs/ais/Lect 8 AIS (S.O V2).mp4",
         },
