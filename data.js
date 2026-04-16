@@ -1131,6 +1131,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/ais/Lect 1 Part 2 (Ais) (S.O V2).mp4",
         },
+        {
+          id: "vid8",
+          title: "Lect 1 Part 2 Dr.M.Z",
+          type: "video",
+          content: "./pdfs/ais/Lect 8 AIS (S.O V2).mp4",
+        },
       ], // Chapter 3
 
       [], // Chapter 4
