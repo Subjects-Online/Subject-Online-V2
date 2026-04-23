@@ -1247,6 +1247,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/Puplic/Lect 6 (Public) (S.O V2).pdf",
         },
+        {
+          id: "lec7",
+          title: "Lect 7-8-9 Dr.Ahmed",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 7-8-9 Part 2 (Public) (S.O V2).pdf",
+        },
       ],
     ],
     videos: [
