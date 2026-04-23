@@ -736,7 +736,7 @@ const CONTENT = {
           id: "vid3",
           title: "Lect 5 Dr.Ashraf ",
           type: "video",
-          content: "./pdfs/political-science/Lect 5 (Public) (S.O).mp4",
+          content: "./pdfs/political-science/Lect 5 (Political) (S.O).mp4",
         },
       ],
       [
@@ -746,6 +746,7 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/political-science/Lect 6 (Political) (S.O V2).mp4",
         },
+        
       ],
     ],
     qa: [
@@ -1279,6 +1280,12 @@ const CONTENT = {
           title: "Lect 5 Dr.Abeer",
           type: "video",
           content: "./pdfs/Puplic/Lect 1.mp4",
+        },
+        {
+          id: "vid6",
+          title: "Lect 7-8-9 Dr.Ahmed",
+          type: "video",
+          content: "./pdfs/Puplic/Public loans first pdf part 2 19 page.mp4",
         },
       ],
     ],
