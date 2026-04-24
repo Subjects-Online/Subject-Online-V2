@@ -303,6 +303,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/accounting/Lect 8 Part 2 (ACC) (S.O V2).mp4",
         },
+         {
+          id: "vid9",
+          title: "Lect 9 Dr.Saeed",
+          type: "video",
+          content: "./pdfs/accounting/Lect 9 Accounting (S.O V2).mp4",
+        },
       ], // Chapter 3
       [], // Chapter 4
     ],
