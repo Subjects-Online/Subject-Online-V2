@@ -298,7 +298,7 @@ function renderHomeCards() {
     { href: "doctors-news.html", icon: "📰", title: "Doctors News", desc: "Latest announcements, notes, and updates from your professors — delivered instantly.", grad: "135deg,#059669,#06b6d4", color: "#059669", tag1: "Stay Updated", tag2: "All Professors", pills: ["Announcements", "Notes", "Reminders", "Updates"] },
     { href: "personal-dev.html", icon: "🌱", title: "Self Development", desc: "Build the mindset, habits, and skills that make you unstoppable beyond the classroom.", grad: "135deg,#f59e0b,#ec4899", color: "#f59e0b", tag1: "Grow Every Day", tag2: "6 Categories", pills: ["Mindset", "Productivity", "Focus", "Goal Setting"] },
     { href: "favorites.html", icon: "⭐", title: "Favorites", desc: "Easily access your saved lectures, summaries, and videos in one convenient place.", grad: "135deg,#eab308,#f97316", color: "#eab308", tag1: "Quick Access", tag2: "Your Picks", pills: ["Saved Items", "Bookmarks", "Quick Nav"] },
-    { href: "special.html", icon: "💎", title: "Special Subject", desc: "Exclusive PDF materials & interactive study mode for top core subjects.", grad: "135deg,#6366f1,#a855f7", color: "#a855f7", tag1: "Premium", tag2: "PDF & Interactive", pills: ["Elite Content", "Smart Study", "Fast Access"] },
+    // { href: "special.html", icon: "💎", title: "Special Subject", desc: "Exclusive PDF materials & interactive study mode for top core subjects.", grad: "135deg,#6366f1,#a855f7", color: "#a855f7", tag1: "Premium", tag2: "PDF & Interactive", pills: ["Elite Content", "Smart Study", "Fast Access"] },
   ];
 
   container.innerHTML = cards.map((c, i) => `
