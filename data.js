@@ -857,6 +857,14 @@ const CONTENT = {
           content: "./pdfs/marketing/Lect 5 (Marketing) (S.O V2).mp4",
         },
       ], // Chapter 3
+      [
+        {
+          id: "vid7",
+          title: "Lect 7 Dr.HM",
+          type: "video",
+          content: "./pdfs/marketing/Lect 7 Marketing (S.O V2).mp4",
+        },
+      ]
     ],
     summaries: [
       // Chapter 1
