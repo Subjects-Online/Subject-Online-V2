@@ -15,6 +15,15 @@ const SUBJECTS = [
     desc: "Financial Statements, Journal Entries & Cost Accounting",
   },
   {
+    id: "ais",
+    name: "AIS",
+    nameAr: "AIS",
+    icon: "💻",
+    color: "#f97316",
+    grad: "135deg,#f97316,#dc2626",
+    desc: "Accounting Information Systems & Database Management",
+  },
+  {
     id: "eco",
     name: "Economics",
     nameAr: "Eco",
@@ -22,6 +31,24 @@ const SUBJECTS = [
     color: "#10b981",
     grad: "135deg,#10b981,#0d9488",
     desc: "Micro & Macroeconomics – Supply, Demand, Market Structures",
+  },
+   {
+    id: "public-finance",
+    name: "Public Finance",
+    nameAr: "Public Finance",
+    icon: "🏦",
+    color: "#8b5cf6",
+    grad: "135deg,#8b5cf6,#6d28d9",
+    desc: "Government Budgets, Taxation & Public Expenditure",
+  },
+   {
+    id: "statistics",
+    name: "Statistics",
+    nameAr: "Stat",
+    icon: "📉",
+    color: "#06b6d4",
+    grad: "135deg,#06b6d4,#0284c7",
+    desc: "Probability, Regression Analysis & Statistical Methods",
   },
   {
     id: "english",
@@ -50,33 +77,9 @@ const SUBJECTS = [
     grad: "135deg,#ec4899,#e11d48",
     desc: "Market Research, Consumer Behavior & Digital Marketing",
   },
-  {
-    id: "statistics",
-    name: "Statistics",
-    nameAr: "Stat",
-    icon: "📉",
-    color: "#06b6d4",
-    grad: "135deg,#06b6d4,#0284c7",
-    desc: "Probability, Regression Analysis & Statistical Methods",
-  },
-  {
-    id: "ais",
-    name: "AIS",
-    nameAr: "AIS",
-    icon: "💻",
-    color: "#f97316",
-    grad: "135deg,#f97316,#dc2626",
-    desc: "Accounting Information Systems & Database Management",
-  },
-  {
-    id: "public-finance",
-    name: "Public Finance",
-    nameAr: "Public Finance",
-    icon: "🏦",
-    color: "#8b5cf6",
-    grad: "135deg,#8b5cf6,#6d28d9",
-    desc: "Government Budgets, Taxation & Public Expenditure",
-  },
+ 
+  
+ 
 ];
 
 const SECTIONS = [
@@ -1160,13 +1163,13 @@ const CONTENT = {
       [
         {
           id: "vid7",
-          title: "Lect 1 Part 2 Dr.M.Z",
+          title: "Lect 7 Part 2 Dr.M.Z",
           type: "video",
           content: "./pdfs/ais/Lect 1 Part 2 (Ais) (S.O V2).mp4",
         },
         {
           id: "vid8",
-          title: "Lect 2 Part 2 Dr.M.Z",
+          title: "Lect 8 Part 2 Dr.M.Z",
           type: "video",
           content: "./pdfs/ais/Lect 8 AIS (S.O V2).mp4",
         },
