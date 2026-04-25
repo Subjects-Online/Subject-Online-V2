@@ -216,15 +216,21 @@ const CONTENT = {
       [
         {
           id: "lec7",
-          title: "Lect 7 part 2 Dr.MZ",
+          title: "Lect 7 part 2 Dr.Saeed",
           type: "file",
           content: "./pdfs/accounting/Lect 7 (Acc.) (S.O V2).pdf",
         },
         {
           id: "lec8",
-          title: "Lect 8 part 2 Dr.MZ",
+          title: "Lect 8 part 2 Dr.Saeed",
           type: "file",
           content: "./pdfs/accounting/Lect 8 Accounting (S.O V2).pdf",
+        },
+        {
+          id: "lec9",
+          title: "Lect 9 part 2 Dr.Saeed",
+          type: "file",
+          content: "./pdfs/accounting/Lect 9 Accounting (S.O V2).pdf",
         },
       ], // Chapter 3
 
