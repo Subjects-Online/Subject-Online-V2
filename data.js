@@ -1109,10 +1109,16 @@ const CONTENT = {
       ], // Chapter 3
       [
         {
-          id: "lec4",
+          id: "lec7",
           title: "Lect 7 Dr.MZ",
           type: "file",
           content: "./pdfs/ais/Lect 7 AIS (S.O V2).pdf",
+        },
+        {
+          id: "lec9",
+          title: "Lect 9 Dr.MZ",
+          type: "file",
+          content: "./pdfs/ais/Lect 9 AIS (S.O V2).pdf",
         },
       ], // Chapter 4
       //------
