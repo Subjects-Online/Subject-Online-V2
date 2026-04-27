@@ -1206,6 +1206,12 @@ const CONTENT = {
           content: "./pdfs/ais/Lecture_No._2 summary.pdf",
         },
         {
+          id: "lec2",
+          title: "Lect 2 Dr.S.R 'best'",
+          type: "file",
+          content: "./pdfs/ais/Lecture 2 summary AIS (S.O V2).pdf",
+        },
+        {
           id: "lec3",
           title: "Lect 3 Dr.S.R",
           type: "file",
