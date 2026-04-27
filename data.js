@@ -330,6 +330,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Sections1-2 (Acc.) (S.O).pdf",
         },
+        {
+          id: "lec3",
+          title: "Section 7 'HandWriting'",
+          type: "file",
+          content: "./pdfs/accounting/Sections 7 (Acc.) (S.O).pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -529,6 +535,12 @@ const CONTENT = {
           title: "Section 4 'Hand Writing'",
           type: "file",
           content: "./pdfs/economics/Eco section 4 .pdf",
+        },
+        {
+          id: "lec3",
+          title: "Section 7 'Hand Writing'",
+          type: "file",
+          content: "./pdfs/economics/Section 7 Eco (S.O V2) .pdf",
         },
       ],
       [], // Chapter 2
@@ -1375,6 +1387,12 @@ const CONTENT = {
           title: "section 4 'HandWriting' ",
           type: "file",
           content: "./pdfs/Puplic/Puplic section 4.pdf",
+        },
+        {
+          id: "lec6",
+          title: "section 7 'HandWriting' ",
+          type: "file",
+          content: "./pdfs/Puplic/Sections 7 (Public) (S.O).pdf",
         },
       ],
     ],
