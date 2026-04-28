@@ -1231,6 +1231,12 @@ const CONTENT = {
           content: "/pdfs/ais/lect_1 summary.pdf",
         },
         {
+          id: "lec1",
+          title: "Lect 1 Dr.S.R 'best'",
+          type: "file",
+          content: "/pdfs/ais/Lecture 1 (AIS) (S.O V2) summary.pdf",
+        },
+        {
           id: "lec2",
           title: "Lect 2 Dr.S.R",
           type: "file",
