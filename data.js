@@ -537,7 +537,13 @@ const CONTENT = {
           content: "./pdfs/economics/Eco section 4 .pdf",
         },
         {
-          id: "lec3",
+          id: "lec5",
+          title: "Section 5 'Hand Writing'",
+          type: "file",
+          content: "./pdfs/economics/Section 5 Eco (S.O V2) .pdf",
+        },
+        {
+          id: "lec7",
           title: "Section 7 'Hand Writing'",
           type: "file",
           content: "./pdfs/economics/Section 7 Eco (S.O V2) .pdf",
@@ -976,6 +982,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/statistics/Lect 8 (stat) (S.O V2) Hand Writing.pdf",
         },
+        {
+          id: "lec19",
+          title: "Lects 'HandWriting' Dr.Ahmed",
+          type: "file",
+          content: "./pdfs/statistics/Lect 1-2 Stat (S.O V2) .pdf",
+        },
       ], // Chapter 2
       [], // Chapter 3
       [], // Chapter 4
@@ -1124,6 +1136,7 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/ais/Lect 8 AIS (S.O V2) Hand Writing.pdf",
         },
+        
       ], // Chapter 3
       [
         {
@@ -1137,6 +1150,12 @@ const CONTENT = {
           title: "Lect 9 Dr.MZ",
           type: "file",
           content: "./pdfs/ais/Lect 9 AIS (S.O V2).pdf",
+        },
+        {
+          id: "lec10",
+          title: "Lect 10 'HandWriting'",
+          type: "file",
+          content: "./pdfs/ais/Lect 10 AIS (S.O V2) Hand Writing.pdf",
         },
       ], // Chapter 4
       //------
