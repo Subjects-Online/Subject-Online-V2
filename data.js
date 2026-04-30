@@ -462,7 +462,20 @@ const CONTENT = {
           content: "./pdfs/economics/Lect 1 - Lect 5.pdf",
         },
       ], // Chapter 2
-      [], // Chapter 3
+      [
+        {
+          id: "lec6",
+          title: "Lect 6 Dr.Hannan",
+          type: "file",
+          content: "./pdfs/economics/Lect 6 Eco (S.O V2).pdf",
+        },
+        {
+          id: "lec6",
+          title: "Explain of DWL Lect 6",
+          type: "file",
+          content: "./pdfs/economics/Explain Of DWL Lect 6.pdf",
+        },
+      ], // Chapter 3
     ],
     videos: [
       // Chapter 1
