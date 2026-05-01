@@ -350,6 +350,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Quiz 1 Accounting.pdf",
         },
+        {
+          id: "lec2",
+          title: "Quiz 2 part 2 ",
+          type: "file",
+          content: "./pdfs/accounting/Accounting Q&A New Quiz (S.O V2).pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
