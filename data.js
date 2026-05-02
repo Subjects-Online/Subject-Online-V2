@@ -750,6 +750,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/political-science/Lect 6 (Political) (S.O V2).pdf",
         },
+        {
+          id: "pol7",
+          title: "Lect 7 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 7 (Political) (S.O V2).pdf",
+        },
       ],
     ],
     quizzes: [
@@ -819,6 +825,13 @@ const CONTENT = {
           type: "file",
           content:
             "./pdfs/political-science/Political_Science summary __Lectures_1__2_.pdf",
+        },
+        {
+          id: "Lec7",
+          title: "Sum of Lect 7",
+          type: "file",
+          content:
+            "./pdfs/political-science/Summary of Lect 7 (Political) (S.O V2).pdf",
         },
       ],
     ],
