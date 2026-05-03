@@ -532,6 +532,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/economics/Lect 7 Eco Part 2 (S.O V2).mp4",
         },
+        {
+          id: "vid7",
+          title: "Lect 8 Dr.Eman Part 2 ",
+          type: "video",
+          content: "./pdfs/economics/Lect 8 Eco Part 2 (S.O V2).mp4",
+        },
       ], // Chapter 3
     ],
     sections: [
