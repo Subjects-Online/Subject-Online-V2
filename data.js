@@ -481,6 +481,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Explain Of DWL Lect 6.pdf",
         },
+        {
+          id: "lec7",
+          title: "Lect 7 Part 2 Dr.Eman",
+          type: "file",
+          content: "./pdfs/economics/Lect 7 Eco Part 2 (S.O V2).pdf",
+        },
       ], // Chapter 3
     ],
     videos: [
