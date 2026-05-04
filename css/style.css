@@ -823,8 +823,15 @@ body {
 }
 
 @keyframes floatAvatar {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .greeting-content {
@@ -852,9 +859,17 @@ body {
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .greet-meta {
@@ -877,7 +892,7 @@ body {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 99px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .greet-meta span i {
@@ -2114,7 +2129,7 @@ body {
   border: 1px solid var(--border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .fav-bubble {
@@ -2127,7 +2142,7 @@ body {
   font-size: 24px;
   color: white;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -3242,7 +3257,7 @@ body {
 
 .mv-panel {
   width: 100%;
-  width:  100vw;
+  width: 100vw;
   height: 100%;
   background: var(--bg2);
   border: 1px solid var(--border);

@@ -806,7 +806,7 @@ const CONTENT = {
           id: "vid3",
           title: "Lect 5 Dr.Ashraf ",
           type: "video",
-          content: "./pdfs/political-science/Lect 5 (Political) (S.O).mp4",
+          content: "./pdfs/political-science/Lect 5 (Public) (S.O).mp4",
         },
       ],
       [
