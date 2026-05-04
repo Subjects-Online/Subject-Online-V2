@@ -1059,12 +1059,12 @@ function renderGreeting() {
 
     container.innerHTML = `
       <div class="greeting-banner au d1">
-        <div class="mobile-avatar" style="width:140px; height:140px; font-size:65px; background: transparent;">${avatarHtml}</div>
+        <div class="greet-avatar">${avatarHtml}</div>
         <div class="greeting-content">
           <h2 class="greet-title">${greetText}, <span class="g-text">${settings.name}</span>!</h2>
-          <div class="greet-meta" style="display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-top:12px;">
-            <span style="font-size: 15px; color: var(--muted); font-weight:500;"><i style="font-style:normal; opacity: 0.8;">🕒</i> ${timeLbl}: ${timeNowStr}</span>
-            <span style="font-size: 15px; color: var(--muted); font-weight:500;"><i style="font-style:normal; opacity: 0.8;">📅</i> ${visitLbl}: ${lastVisitStr}</span>
+          <div class="greet-meta">
+            <span><i>🕒</i> ${timeLbl}: ${timeNowStr}</span>
+            <span><i>📅</i> ${visitLbl}: ${lastVisitStr}</span>
           </div>
         </div>
       </div>
