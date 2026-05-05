@@ -790,6 +790,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/political-science/Quiz 1 (Political) (S.O).pdf",
         },
+        {
+          id: "pol3",
+          title: "Quiz Dr.Ashraf المنهج كلو",
+          type: "file",
+          content: "./pdfs/political-science/Political Science – Lecture-Based Q&A with Explanations.pdf",
+        },
       ],
     ],
     videos: [
