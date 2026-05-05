@@ -1013,6 +1013,14 @@ const CONTENT = {
     ],
     "quizzes" : [
       [
+         {
+           
+          id: "lec2",
+          title: "Quiz 1 Dr.HM",
+          type: "file",
+          content: "./pdfs/marketing/Marketing quiz 1.pdf",
+        
+        },
         {
            
           id: "lec1",
@@ -1020,7 +1028,8 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/marketing/Quiz 2 .pdf",
         
-        }
+        },
+        
       ]
     ]
   },
