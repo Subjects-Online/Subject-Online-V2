@@ -84,6 +84,13 @@ const SUBJECTS = [
 
 const SECTIONS = [
   {
+    id: "final-review",
+    title: "Final Review",
+    icon: "🏆",
+    desc: "ملخص الترم كامل – جداول وتنظيم",
+    color: "#0891b2",
+  },
+  {
     id: "course-content",
     title: "Course Content",
     icon: "🎓",
@@ -118,13 +125,7 @@ const SECTIONS = [
     desc: "Test Bank محلول + أسئلة إضافية",
     color: "#db2777",
   },
-  {
-    id: "final-review",
-    title: "Final Review",
-    icon: "🏆",
-    desc: "ملخص الترم كامل – جداول وتنظيم",
-    color: "#0891b2",
-  },
+  
   {
     id: "videos",
     title: "Videos",
