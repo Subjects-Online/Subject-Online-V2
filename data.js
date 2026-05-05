@@ -400,6 +400,16 @@ const CONTENT = {
       [], // Chapter 3
       [], // Chapter 4
     ],
+    "final-review":[
+     [
+      {
+        id: "vid4",
+          title: "Revision on Part 1 Dr.MZ",
+          type: "video",
+          content: "./pdfs/accounting/Revision on Part 1 Dr.MZ.mp4",
+      }
+     ] 
+    ]
   },
 
   // ============================
