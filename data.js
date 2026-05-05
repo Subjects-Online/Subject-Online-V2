@@ -768,6 +768,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/political-science/Lect 7 (Political) (S.O V2).pdf",
         },
+        {
+          id: "pol8",
+          title: "Lect 8 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 8 (Political) (S.O V2).pdf",
+        },
       ],
     ],
     quizzes: [
