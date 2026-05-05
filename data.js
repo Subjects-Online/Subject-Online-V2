@@ -353,6 +353,12 @@ const CONTENT = {
         },
         {
           id: "lec2",
+          title: "Quiz on Lect(7-10)",
+          type: "file",
+          content: "./pdfs/accounting/Intangible Assets – Complete Test Rewrite with Answers & Explanations.pdf",
+        },
+        {
+          id: "lec2",
           title: "Quiz 2 part 2 ",
           type: "file",
           content: "./pdfs/accounting/Accounting Q&A New Quiz (S.O V2).pdf",
@@ -734,6 +740,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/english/business English Quiz 1.pdf",
         },
+        {
+          id: "lec2",
+          title: "Quiz 2",
+          type: "file",
+          content: "./pdfs/english/English new quiz .pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -999,6 +1011,18 @@ const CONTENT = {
       [], // Chapter 3
       [], // Chapter 4
     ],
+    "quizzes" : [
+      [
+        {
+           
+          id: "lec1",
+          title: "Quiz 2 Dr.HM",
+          type: "file",
+          content: "./pdfs/marketing/Quiz 2 .pdf",
+        
+        }
+      ]
+    ]
   },
   //-------------------------------------------------------------
   statistics: {
