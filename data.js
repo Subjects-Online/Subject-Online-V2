@@ -797,6 +797,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/political-science/Lect 8 (Political) (S.O V2).pdf",
         },
+        {
+          id: "pol9",
+          title: "Lect 9 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 9 (Political) (S.O V2).pdf",
+        },
       ],
     ],
     quizzes: [
