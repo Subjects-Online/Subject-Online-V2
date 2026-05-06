@@ -875,6 +875,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/political-science/Lect 6 (Political) (S.O V2).mp4",
         },
+        {
+          id: "vid9",
+          title: "Lect 9 Dr.Ashraf ",
+          type: "video",
+          content: "./pdfs/political-science/Lect 9 Political (S.O V2).mp4",
+        },
         
       ],
     ],
