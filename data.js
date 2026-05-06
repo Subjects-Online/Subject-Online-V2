@@ -815,7 +815,25 @@ const CONTENT = {
         },
         {
           id: "pol3",
-          title: "Quiz Dr.Ashraf المنهج كلو",
+          title: "Quiz 2 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Quiz 2 Political Science.pdf",
+        },
+        {
+          id: "pol4",
+          title: "Quiz 3 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Political_Science_Quiz 3 on Lect (5-7).pdf",
+        },
+        {
+          id: "pol5",
+          title: "Quiz 4 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Political_Science_Quiz 4 on Lect (7-9).pdf",
+        },
+        {
+          id: "pol6",
+          title: "Quiz 5 Dr.Ashraf المنهج كلو",
           type: "file",
           content: "./pdfs/political-science/Political Science – Lecture-Based Q&A with Explanations.pdf",
         },
