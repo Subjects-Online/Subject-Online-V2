@@ -4173,9 +4173,9 @@ body {
     0 8px 20px -4px var(--bbl-shadow, rgba(0,0,0,0.22)),
     inset 0 1.5px 0 rgba(255,255,255,0.2),
     inset 0 -1px 0 rgba(0,0,0,0.08);
-  animation:
+  /* animation:
     bubblePop   0.5s cubic-bezier(0.22,1,0.36,1) both,
-    floatBubble 3.4s ease-in-out          infinite;
+    floatBubble 3.4s ease-in-out          infinite; */
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
