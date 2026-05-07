@@ -1113,13 +1113,20 @@ const CONTENT = {
           content: "./pdfs/statistics/Lect 8 (stat) (S.O V2) Hand Writing.pdf",
         },
         {
-          id: "lec19",
+          id: "lec9",
           title: "Lects 'HandWriting' Dr.Ahmed",
           type: "file",
           content: "./pdfs/statistics/Lect 1-2 Stat (S.O V2) .pdf",
         },
       ], // Chapter 2
-      [], // Chapter 3
+      [
+          {
+          id: "lec10",
+          title: "Lect 7-8 Dr.Ahmed",
+          type: "file",
+          content: "./pdfs/statistics/Lect 7 -8 (Stat) (S.O V2).pdf",
+        },
+      ], // Chapter 3
       [], // Chapter 4
     ],
     videos: [
