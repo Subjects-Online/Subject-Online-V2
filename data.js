@@ -1414,6 +1414,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/ais/AIS_Questions_and_Answers (َQuiz 2) .pdf",
         },
+        {
+          id: "lec3",
+          title: "Quiz 1 from 11/4 to 11/5 ",
+          type: "file",
+          content: "./pdfs/ais/AIS Quiz 1 Part 2 .pdf",
+        },
       ],
 
       [], // Chapter 2
