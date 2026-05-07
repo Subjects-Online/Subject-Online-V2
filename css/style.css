@@ -554,22 +554,25 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   cursor: pointer;
   transition: all var(--tr);
+  flex-shrink: 0;
 }
 
 .hamburger:hover {
   background: var(--surface-h);
+  border-color: var(--border-h);
+  box-shadow: 0 4px 12px var(--glow);
 }
 
 .hamburger span {
   display: block;
-  width: 20px;
+  width: 18px;
   height: 2px;
   background: var(--muted);
   border-radius: 2px;
@@ -669,6 +672,12 @@ body {
 
   .theme-btn {
     padding: 8px;
+  }
+
+  /* Extra right padding so hamburger doesn't clip on pill navbar */
+  .nav-inner {
+    padding: 0 16px 0 20px;
+    gap: 10px;
   }
 }
 
@@ -4123,4 +4132,111 @@ body {
 .mobile-profile-info p {
   font-size: 12px;
   color: var(--muted);
+}
+
+/* ==================== SUBJECT CARD STATS — FLOATING CIRCLES ==================== */
+@keyframes floatBubble {
+  0%   { transform: translateY(0px)  scale(1);    }
+  35%  { transform: translateY(-8px) scale(1.05); }
+  70%  { transform: translateY(-4px) scale(1.02); }
+  100% { transform: translateY(0px)  scale(1);    }
+}
+
+@keyframes bubblePop {
+  0%   { transform: scale(0.5) translateY(10px); opacity: 0; }
+  65%  { transform: scale(1.1) translateY(-2px);  opacity: 1; }
+  100% { transform: scale(1)   translateY(0px);   opacity: 1; }
+}
+
+/* Container row */
+.sc-stats {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* The big circle */
+.sc-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  cursor: default;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 20px -4px var(--bbl-shadow, rgba(0,0,0,0.22)),
+    inset 0 1.5px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.08);
+  animation:
+    bubblePop   0.5s cubic-bezier(0.22,1,0.36,1) both,
+    floatBubble 3.4s ease-in-out          infinite;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.sc-bubble:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  animation-play-state: paused;
+  box-shadow:
+    0 16px 32px -4px var(--bbl-shadow, rgba(0,0,0,0.3)),
+    inset 0 1.5px 0 rgba(255,255,255,0.25);
+}
+
+/* PDF circle — rose/pink */
+.sc-bubble-pdf {
+  --bbl-shadow: rgba(236, 72, 153, 0.45);
+  background: linear-gradient(145deg, rgba(236,72,153,0.28), rgba(244,114,182,0.18));
+  border: 1.5px solid rgba(236, 72, 153, 0.4);
+  color: #f472b6;
+  animation-delay: 0s, 0s;
+}
+
+/* Video circle — blue */
+.sc-bubble-vid {
+  --bbl-shadow: rgba(59, 130, 246, 0.45);
+  background: linear-gradient(145deg, rgba(59,130,246,0.28), rgba(96,165,250,0.18));
+  border: 1.5px solid rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+  animation-delay: 0s, 0.6s;
+}
+
+/* Icon inside the circle */
+.sc-bubble-icon {
+  flex-shrink: 0;
+  opacity: 0.95;
+  filter: drop-shadow(0 1px 3px currentColor);
+}
+
+/* Bold X/Y count */
+.sc-bubble-count {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+/* Small label underneath */
+.sc-bubble-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  opacity: 0.75;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Light mode */
+[data-theme="light"] .sc-bubble-pdf {
+  color: #db2777;
+  background: linear-gradient(145deg, rgba(236,72,153,0.16), rgba(244,114,182,0.1));
+}
+
+[data-theme="light"] .sc-bubble-vid {
+  color: #2563eb;
+  background: linear-gradient(145deg, rgba(59,130,246,0.16), rgba(96,165,250,0.1));
 }

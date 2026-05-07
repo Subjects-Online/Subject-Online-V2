@@ -260,8 +260,52 @@ function renderSubjectCards() {
     sortedSubjects = [...favs, ...rest];
   }
 
+  // Compute per-subject totals and progress
+  const progressData = JSON.parse(localStorage.getItem("so_progress") || "{}");
+
   grid.innerHTML = sortedSubjects.map((s, i) => {
     const isFav = isFavorite("subject", s.id);
+
+    // Count total PDFs and Videos for this subject
+    let totalPdfs = 0, totalVids = 0;
+    const content = (typeof CONTENT !== "undefined" && CONTENT[s.id]) ? CONTENT[s.id] : {};
+    const special = (typeof SPECIAL_CONTENT !== "undefined" && SPECIAL_CONTENT[s.id]) ? SPECIAL_CONTENT[s.id] : [];
+
+    Object.values(content).forEach(sections => {
+      sections.forEach(ch => {
+        ch.forEach(lec => {
+          if (lec.content || (lec.interactive && lec.interactive.length > 0)) {
+            if (lec.type === "video") totalVids++;
+            else totalPdfs++;
+          }
+        });
+      });
+    });
+    special.forEach(lec => {
+      if (lec.content || (lec.interactive && lec.interactive.length > 0)) {
+        if (lec.type === "video") totalVids++;
+        else totalPdfs++;
+      }
+    });
+
+    const subjProg = progressData[s.id] || { pdfs: [], videos: [] };
+    const donePdfs = subjProg.pdfs.length;
+    const doneVids = subjProg.videos.length;
+
+    const statsHtml = `
+      <div class="sc-stats">
+        <div class="sc-bubble sc-bubble-pdf">
+          <svg class="sc-bubble-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          <span class="sc-bubble-count">${donePdfs}/${totalPdfs}</span>
+          <span class="sc-bubble-label">PDFs</span>
+        </div>
+        <div class="sc-bubble sc-bubble-vid">
+          <svg class="sc-bubble-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+          <span class="sc-bubble-count">${doneVids}/${totalVids}</span>
+          <span class="sc-bubble-label">Videos</span>
+        </div>
+      </div>`;
+
     return `
     <a href="subject.html?id=${s.id}" class="subject-card au" style="animation-delay:${i * 0.07}s; --fc-color: ${s.color}; --fc-grad: linear-gradient(${s.grad})">
       <div class="fc-top">
@@ -273,6 +317,7 @@ function renderSubjectCards() {
       <div class="fc-bottom">
         <h3 class="fc-title">${s.name}</h3>
         <p class="fc-desc-short">${s.nameAr} • 7 Sections</p>
+        ${statsHtml}
       </div>
       <div class="fc-glow" style="background: var(--fc-grad)"></div>
     </a>
