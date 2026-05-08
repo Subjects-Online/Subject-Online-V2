@@ -410,11 +410,18 @@ const CONTENT = {
     "final-review":[
      [
       {
+
         // id: "vid1",
         //   title: "Revision on Part 1 Dr.MZ",
         //   type: "video",
         //   content: "./pdfs/accounting/Revision on Part 1 Dr.MZ.mp4",
-      }
+      },
+      {
+          id: "lec1",
+          title: "Summary of lect 1-6 in 18 point without questions",
+          type: "file",
+          content: "./pdfs/accounting/Lect 1-6 Accounting Part 1 in 18 point without questions.pdf",
+        },
      ] 
     ]
   },
