@@ -603,6 +603,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Section 7 Eco (S.O V2) .pdf",
         },
+        {
+          id: "lec8",
+          title: "Section 8 'Hand Writing'",
+          type: "file",
+          content: "./pdfs/economics/Final section ( Eco ).pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
@@ -1133,6 +1139,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/statistics/Lect 7 -8 (Stat) (S.O V2).pdf",
         },
+        {
+          id: "lec11",
+          title: "Final Lect Dr.Ahmed",
+          type: "file",
+          content: "./pdfs/statistics/Final lecture Dr.Ahmed .pdf",
+        },
       ], // Chapter 3
       [], // Chapter 4
     ],
@@ -1568,6 +1580,12 @@ const CONTENT = {
           title: "section 7 'HandWriting' ",
           type: "file",
           content: "./pdfs/Puplic/Sections 7 (Public) (S.O).pdf",
+        },
+        {
+          id: "lec7",
+          title: "section 8 'HandWriting' ",
+          type: "file",
+          content: "./pdfs/Puplic/Final Section ( Public ).pdf",
         },
       ],
     ],
