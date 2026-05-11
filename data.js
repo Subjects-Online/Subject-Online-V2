@@ -320,7 +320,14 @@ const CONTENT = {
           content: "./pdfs/accounting/Lect 9 Accounting (S.O V2).mp4",
         },
       ], // Chapter 3
-      [], // Chapter 4
+      [
+        {
+          id: "vid11",
+          title: "Lect 11 Dr.Saeed",
+          type: "video",
+          content: "./pdfs/accounting/Lect 11 Part 2 Acc. (S.O V2).mp4",
+        },
+      ], // Chapter 4
     ],
     sections: [
       // Chapter 1
@@ -421,6 +428,12 @@ const CONTENT = {
           title: "Summary of lect 1-6 in 18 point without questions",
           type: "file",
           content: "./pdfs/accounting/Lect 1-6 Accounting Part 1 in 18 point without questions.pdf",
+        },
+        {
+          id: "lec2",
+          title: "Imp Q on lects 1-6 Part 1 Dr.MZ",
+          type: "file",
+          content: "./pdfs/accounting/Imp Q on lects 1-6 Part 1 Dr.MZ.pdf",
         },
      ] 
     ]
