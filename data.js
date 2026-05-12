@@ -320,14 +320,7 @@ const CONTENT = {
           content: "./pdfs/accounting/Lect 9 Accounting (S.O V2).mp4",
         },
       ], // Chapter 3
-      [
-        {
-          id: "vid11",
-          title: "Lect 11 Dr.Saeed",
-          type: "video",
-          content: "./pdfs/accounting/Lect 11 Part 2 Acc. (S.O V2).mp4",
-        },
-      ], // Chapter 4
+      [], // Chapter 4
     ],
     sections: [
       // Chapter 1
