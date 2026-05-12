@@ -238,7 +238,14 @@ const CONTENT = {
         },
       ], // Chapter 3
 
-      [], // Chapter 4
+      [
+        {
+          id: "lec11",
+          title: "Lect 11 part 2 Dr.Saeed",
+          type: "file",
+          content: "./pdfs/accounting/Lecture (11) Acc. Part 2.pdf",
+        },
+      ], // Chapter 4
     ],
     videos: [
       // Chapter 1
