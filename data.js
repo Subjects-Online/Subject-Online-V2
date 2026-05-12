@@ -418,10 +418,10 @@ const CONTENT = {
      [
       {
 
-        id: "vid1",
-          title: "Revision on Part 1 Dr.MZ",
-          type: "video",
-          content: "./pdfs/accounting/Revision on Part 1 Dr.MZ_001.mp4",
+        // id: "vid1",
+        //   title: "Revision on Part 1 Dr.MZ",
+        //   type: "video",
+        //   content: "./pdfs/accounting/Revision on Part 1 Dr.MZ_001.mp4",
       },
       {
           id: "lec1",
