@@ -978,7 +978,28 @@ const CONTENT = {
           content: "./pdfs/marketing/Lect 5 Marketing.pdf",
         },
       ], // Chapter 3
-      [], // Chapter 4
+      [
+        {
+          id: "lec6",
+          title: "Lect 6 Dr.Heba",
+          type: "file",
+          content: "./pdfs/marketing/lect6.pdf",
+        },
+        {
+          id: "lec7",
+          title: "Lect 7 Dr.Heba",
+          type: "file",
+          content: "./pdfs/marketing/lect 7.pdf",
+        },
+        {
+          id: "lec10",
+          title: "Lect 10 Dr.Heba",
+          type: "file",
+          content: "./pdfs/marketing/lect 10.pdf",
+        },
+      ], // Chapter 4
+   
+
     ],
     videos: [
       // Chapter 1
