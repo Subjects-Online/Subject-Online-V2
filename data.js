@@ -240,6 +240,12 @@ const CONTENT = {
 
       [
         {
+          id: "lec10",
+          title: "Lect 10 part 2 Dr.Saeed",
+          type: "file",
+          content: "./pdfs/accounting/Lecture (10) Acc. Part 2.pdf",
+        },
+        {
           id: "lec11",
           title: "Lect 11 part 2 Dr.Saeed",
           type: "file",
