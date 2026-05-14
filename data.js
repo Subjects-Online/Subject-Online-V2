@@ -432,7 +432,7 @@ const CONTENT = {
       {
 
         id: "vid2",
-          title: "Revision on Part 2 Dr.Saeed ملاحظة بسيطة حصل غلطة بس والمحاضرات اتعكست يعنى شارح من الاخر للاول  ",
+          title: "Revision on Part 2 Dr.Saeed ملاحظة : حصل غلطة بس والمحاضرات اتعكست يعنى شارح من الاخر للاول  ",
           type: "video",
           content: "./pdfs/accounting/Revision on Part 2 Dr.Saeed_002.mp4",
       },
