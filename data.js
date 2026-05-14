@@ -430,6 +430,13 @@ const CONTENT = {
           content: "./pdfs/accounting/Revision on Part 1 Dr.MZ_001.mp4",
       },
       {
+
+        id: "vid2",
+          title: "Revision on Part 2 Dr.Saeed ملاحظة بسيطة حصل غلطة بس والمحاضرات اتعكست يعنى شارح من الاخر للاول  ",
+          type: "video",
+          content: "./pdfs/accounting/Revision on Part 2 Dr.Saeed_002.mp4",
+      },
+      {
           id: "lec1",
           title: "Summary of lect 1-6 in 18 point without questions",
           type: "file",
