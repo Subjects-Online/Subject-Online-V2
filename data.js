@@ -448,6 +448,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/accounting/Imp Q on lects 1-6 Part 1 Dr.MZ.pdf",
         },
+        {
+          id: "lec2",
+          title: "Summary of lect 7-1 Part 2 in 18 point without questions",
+          type: "file",
+          content: "./pdfs/accounting/Lect 7-11 Accounting Part 2 in 8 point without questions.pdf",
+        },
      ] 
     ]
   },
