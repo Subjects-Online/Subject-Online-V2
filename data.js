@@ -808,6 +808,22 @@ const CONTENT = {
       [], // Chapter 3
       [], // Chapter 4
     ],
+    "final-review":[
+[
+  {
+          id: "lec1",
+          title: "Chapter 2 Dr.Wesam",
+          type: "file",
+          content: "./pdfs/english/Chapter 2 with 21 question in 7 groups Part Dr.Wesam.pdf",
+        },
+  {
+          id: "lec2",
+          title: "Chapter 2 Dr.Wesam",
+          type: "file",
+          content: "./pdfs/english/49 Question on Chapter 2 Part  Dr.Wesam.pdf",
+        },
+]
+    ]
   },
   //-------------------------------------------------------------
   "political-science": {
