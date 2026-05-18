@@ -818,21 +818,27 @@ const CONTENT = {
 [
   {
           id: "lec1",
-          title: "Chapter 2 Dr.Wesam",
+          title: "Chapter 2 Dr.Wesam with 21 Q",
           type: "file",
           content: "./pdfs/english/Chapter 2 with 21 question in 7 groups Part Dr.Wesam.pdf",
         },
   {
           id: "lec2",
-          title: "Chapter 2 Dr.Wesam",
+          title: "Chapter 2 Dr.Wesam 49 Q",
           type: "file",
           content: "./pdfs/english/49 Question on Chapter 2 Part  Dr.Wesam.pdf",
         },
         {
-          id: "lec2",
+          id: "lec3",
           title: "Chapter 5 Dr.Wesam with 21 Q",
           type: "file",
           content: "./pdfs/english/Chapter 5 with 21 question in 7 groups Part Dr.Wesam.pdf",
+        },
+        {
+          id: "lec4",
+          title: "Chapter 5 Dr.Wesam 49 Q",
+          type: "file",
+          content: "./pdfs/english/49 Question on Chapter 5 Part  Dr.Wesam.pdf",
         },
 ]
     ]
