@@ -803,6 +803,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/english/English new quiz .pdf",
         },
+        {
+          id: "lec3",
+          title: "Quiz 3",
+          type: "file",
+          content: "./pdfs/english/Financial_Crises_Test.pdf",
+        },
       ],
       [], // Chapter 2
       [], // Chapter 3
