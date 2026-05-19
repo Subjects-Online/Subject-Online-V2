@@ -83,19 +83,20 @@ const SUBJECTS = [
 ];
 
 const SECTIONS = [
-  {
-    id: "final-review",
-    title: "Final Review",
-    icon: "🏆",
-    desc: "ملخص الترم كامل – جداول وتنظيم",
-    color: "#0891b2",
-  },
+  
   {
     id: "course-content",
     title: "Course Content",
     icon: "🎓",
     desc: "شرح تفصيلي للمادة – مش تلخيص",
     color: "#7c3aed",
+  },
+  {
+    id: "final-review",
+    title: "Final Review",
+    icon: "🏆",
+    desc: "ملخص الترم كامل – جداول وتنظيم",
+    color: "#0891b2",
   },
   {
     id: "quizzes",
