@@ -81,6 +81,10 @@
     </div>
   </div>
 
+  <!-- Mobile section nav toggle -->
+  <button class="sec-nav-toggle" id="sec-nav-toggle" aria-label="Toggle sections">&#8679;</button>
+  <div class="sec-nav-backdrop" id="sec-nav-backdrop"></div>
+
   <!-- MEDIA VIEWER -->
   <div class="mv-overlay" id="mv-overlay">
     <div class="mv-panel">
@@ -109,7 +113,40 @@
   <script src="js/api-key.js"></script>
   <script src="js/main.js"></script>
   <script src="js/translations.js"></script>
-  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+
+    // ── Mobile bottom-sheet section nav ──
+    (function () {
+      var toggle   = document.getElementById('sec-nav-toggle');
+      var sidebar  = document.getElementById('sec-sidebar');
+      var backdrop = document.getElementById('sec-nav-backdrop');
+      if (!toggle || !sidebar || !backdrop) return;
+
+      function open() {
+        sidebar.classList.add('mobile-open');
+        toggle.classList.add('open');
+        backdrop.classList.add('open');
+      }
+      function close() {
+        sidebar.classList.remove('mobile-open');
+        toggle.classList.remove('open');
+        backdrop.classList.remove('open');
+      }
+
+      toggle.addEventListener('click', function () {
+        sidebar.classList.contains('mobile-open') ? close() : open();
+      });
+      backdrop.addEventListener('click', close);
+
+      // Close after selecting a tab
+      sidebar.addEventListener('click', function (e) {
+        if (e.target.closest('.sec-tab')) {
+          setTimeout(close, 200);
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
