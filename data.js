@@ -112,13 +112,6 @@ const SECTIONS = [
     desc: "حل السيكشن مع شرح كل سؤال",
     color: "#059669",
   },
-  {
-    id: "additional",
-    title: "Additional Content",
-    icon: "➕",
-    desc: "محتوى إضافي، ملخصات، وأسئلة",
-    color: "#d97706",
-  },
   
   {
     id: "videos",
@@ -127,6 +120,14 @@ const SECTIONS = [
     desc: "فيديوهات شرح المادة وحل المسائل",
     color: "#7c3aed",
   },
+  {
+    id: "additional",
+    title: "Additional Content",
+    icon: "➕",
+    desc: "محتوى إضافي، ملخصات، وأسئلة",
+    color: "#d97706",
+  },
+  
 ];
 
 // ================================================================
