@@ -316,7 +316,7 @@ function renderSubjectCards() {
       </div>
       <div class="fc-bottom">
         <h3 class="fc-title">${s.name}</h3>
-        <p class="fc-desc-short">${s.nameAr} • 7 Sections</p>
+        <p class="fc-desc-short">${s.nameAr} • 6 Sections</p>
         ${statsHtml}
       </div>
       <div class="fc-glow" style="background: var(--fc-grad)"></div>
@@ -339,7 +339,7 @@ function renderHomeCards() {
   if (!container) return;
 
   const cards = [
-    { href: "subjects.html", icon: "📚", title: "Browse Subjects", desc: "Course content, quizzes, section solutions, summaries, Q&A, final reviews & videos — perfectly organized.", grad: "135deg,#7c3aed,#3b82f6", color: "#7c3aed", tag1: "7 Subjects", tag2: "7 Sections Each", pills: ["Course Content", "Quizzes", "Videos", "Final Review"] },
+    { href: "subjects.html", icon: "📚", title: "Browse Subjects", desc: "Course content, quizzes, section solutions, additional content, final reviews & videos — perfectly organized.", grad: "135deg,#7c3aed,#3b82f6", color: "#7c3aed", tag1: "7 Subjects", tag2: "6 Sections Each", pills: ["Course Content", "Quizzes", "Videos", "Final Review"] },
     { href: "doctors-news.html", icon: "📰", title: "Doctors Essay", desc: "Latest announcements, notes, and updates from your professors — delivered instantly.", grad: "135deg,#059669,#06b6d4", color: "#059669", tag1: "Stay Updated", tag2: "All Professors", pills: ["Announcements", "Notes", "Reminders", "Updates"] },
     { href: "personal-dev.html", icon: "🌱", title: "Self Development", desc: "Build the mindset, habits, and skills that make you unstoppable beyond the classroom.", grad: "135deg,#f59e0b,#ec4899", color: "#f59e0b", tag1: "Grow Every Day", tag2: "6 Categories", pills: ["Mindset", "Productivity", "Focus", "Goal Setting"] },
     { href: "favorites.html", icon: "⭐", title: "Favorites", desc: "Easily access your saved lectures, summaries, and videos in one convenient place.", grad: "135deg,#eab308,#f97316", color: "#eab308", tag1: "Quick Access", tag2: "Your Picks", pills: ["Saved Items", "Bookmarks", "Quick Nav"] },
@@ -1321,7 +1321,7 @@ function renderFavoritesPage() {
           </div>
           <div class="fc-bottom">
             <h3 class="fc-title">${s.name}</h3>
-            <p class="fc-desc-short">${s.nameAr} • 7 Sections</p>
+            <p class="fc-desc-short">${s.nameAr} • 6 Sections</p>
           </div>
           <div class="fc-glow" style="background: var(--fc-grad)"></div>
         </a>

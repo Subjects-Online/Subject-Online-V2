@@ -113,18 +113,11 @@ const SECTIONS = [
     color: "#059669",
   },
   {
-    id: "summaries",
-    title: "Summaries & Keywords",
-    icon: "🔑",
-    desc: "Key Words و Summaries لكل Chapter ومحاضرة",
+    id: "additional",
+    title: "Additional Content",
+    icon: "➕",
+    desc: "محتوى إضافي، ملخصات، وأسئلة",
     color: "#d97706",
-  },
-  {
-    id: "qa",
-    title: "Questions & Answers",
-    icon: "❓",
-    desc: "Test Bank محلول + أسئلة إضافية",
-    color: "#db2777",
   },
   
   {
@@ -1809,7 +1802,17 @@ const SPECIAL_CONTENT = {
 
 // Helper: get chapters for a subject+section
 function getChapters(subjectId, sectionId) {
-  const raw = (CONTENT[subjectId] || {})[sectionId] || [];
+  let raw = [];
+  if (sectionId === "additional") {
+    const sumRaw = (CONTENT[subjectId] || {})["summaries"] || [];
+    const qaRaw = (CONTENT[subjectId] || {})["qa"] || [];
+    for (let i = 0; i < 4; i++) {
+      raw[i] = [...(sumRaw[i] || []), ...(qaRaw[i] || [])];
+    }
+  } else {
+    raw = (CONTENT[subjectId] || {})[sectionId] || [];
+  }
+  
   return [
     { id: "ch1", title: "Chapter 1", lectures: raw[0] || [] },
     { id: "ch2", title: "Chapter 2", lectures: raw[1] || [] },
