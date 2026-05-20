@@ -1168,6 +1168,22 @@ const CONTENT = {
         },
         
       ]
+    ],
+    "final-review":[
+[
+   {
+          id: "lec1",
+          title: "30 Q ",
+          type: "file",
+          content: "./pdfs/marketing/30 Essay Questions.pdf",
+        },
+         {
+          id: "lec2",
+          title: "20 Q ",
+          type: "file",
+          content: "./pdfs/marketing/20 Q.pdf",
+        },
+]
     ]
   },
   //-------------------------------------------------------------
