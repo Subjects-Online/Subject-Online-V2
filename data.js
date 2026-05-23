@@ -1557,6 +1557,22 @@ const CONTENT = {
 
       [], // Chapter 4
     ],
+    "final-review":[
+      [
+        {
+          id: "lec1",
+          title: "Part 1 Dr.Saeed",
+          type: "file",
+          content: "./pdfs/ais/Part 1 AIS.pdf",
+        },
+        {
+          id: "lec2",
+          title: "Clarification on Excel Screen Shote",
+          type: "file",
+          content: "./pdfs/ais/Clarification on Excel screenshot.pdf",
+        },
+      ]
+    ]
   },
   "public-finance": {
     "course-content": [
