@@ -1269,8 +1269,8 @@ body {
 .browse-page {
  padding-top: 110px;
     padding-bottom: 80px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
 }
 
 .browse-header,
@@ -1326,8 +1326,8 @@ body {
 .subject-page {
   padding-top: 110px;
     padding-bottom: 80px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
 }
 
 .subj-back {
