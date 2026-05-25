@@ -4,7 +4,7 @@
 :root {
   --font: "Inter", sans-serif;
   --font-heading: "Playfair Display", serif;
-  --radius: 8px;
+  --radius: 30px;
   --radius-sm: 6px;
   --radius-lg: 12px;
   --tr: 0.25s ease;
@@ -102,7 +102,7 @@ body {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 15px;
 }
 
 .page {
@@ -161,7 +161,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 45px;
+  border-radius:30px;
   transition: all var(--tr);
 }
 
@@ -914,10 +914,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 220px;
+  min-height: 215px;
   padding: 28px;
   background: var(--card);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: 45px;
@@ -961,18 +961,21 @@ body {
 }
 
 .fc-arrow {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    width: 48px;
+    top: 50%;
+    transform: translateY(50%);
+    height: 48px;
+    right: -5px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .fc-arrow svg {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -995,8 +998,8 @@ body {
 
 .fc-title {
   font-size: 24px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .fc-desc-short {
@@ -1017,6 +1020,7 @@ body {
   z-index: -1;
   transition: opacity 0.6s ease;
   transform: translate(30%, -30%);
+  display: none;
 }
 
 .feat-card:hover .fc-glow {
@@ -1115,7 +1119,7 @@ body {
 }
 
 .subject-progress-grid {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
@@ -1201,7 +1205,7 @@ body {
 }
 
 .banner-card {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -1263,8 +1267,10 @@ body {
 
 /* ==================== BROWSE SUBJECTS ==================== */
 .browse-page {
-  padding-top: 110px;
-  padding-bottom: 80px;
+ padding-top: 110px;
+    padding-bottom: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .browse-header,
@@ -1319,7 +1325,9 @@ body {
 /* ==================== SUBJECT PAGE ==================== */
 .subject-page {
   padding-top: 110px;
-  padding-bottom: 80px;
+    padding-bottom: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .subj-back {
@@ -4207,7 +4215,7 @@ body {
 
 /* PDF circle — rose/pink */
 .sc-bubble-pdf {
-  --bbl-shadow: rgba(236, 72, 153, 0.45);
+  /* --bbl-shadow: rgba(236, 72, 153, 0.45); */
   background: linear-gradient(145deg, rgba(236,72,153,0.28), rgba(244,114,182,0.18));
   border: 1.5px solid rgba(236, 72, 153, 0.4);
   color: #f472b6;
@@ -4216,7 +4224,7 @@ body {
 
 /* Video circle — blue */
 .sc-bubble-vid {
-  --bbl-shadow: rgba(59, 130, 246, 0.45);
+  /* --bbl-shadow: rgba(59, 130, 246, 0.45); */
   background: linear-gradient(145deg, rgba(59,130,246,0.28), rgba(96,165,250,0.18));
   border: 1.5px solid rgba(59, 130, 246, 0.4);
   color: #60a5fa;
