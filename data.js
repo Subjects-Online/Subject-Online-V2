@@ -172,18 +172,18 @@ const CONTENT = {
           title: "Lect 3 Dr.MZ",
           type: "file",
           content: "./pdfs/accounting/Non-Monetary_Asset_Exchanges.pdf",
-          interactive: [
-            {
-              title: "Non-Monetary Exchanges",
-              content:
-                "Occurs when an asset is acquired in exchange for a non-monetary asset or a combination of monetary and non-monetary assets.",
-            },
-            {
-              title: "Commercial Substance",
-              content:
-                "An exchange has commercial substance if the future cash flows of the entity are expected to change significantly as a result of the transaction.",
-            },
-          ],
+          // interactive: [
+          //   {
+          //     title: "Non-Monetary Exchanges",
+          //     content:
+          //       "Occurs when an asset is acquired in exchange for a non-monetary asset or a combination of monetary and non-monetary assets.",
+          //   },
+          //   {
+          //     title: "Commercial Substance",
+          //     content:
+          //       "An exchange has commercial substance if the future cash flows of the entity are expected to change significantly as a result of the transaction.",
+          //   },
+          // ],
         },
         {
           id: "lec3",
@@ -1722,6 +1722,12 @@ const CONTENT = {
           title: "Sum. Ch1 Dr.Abeer ",
           type: "file",
           content: "./pdfs/Puplic/Summary of Ch 1 (Public).pdf",
+        },
+         {
+          id: "lec2",
+          title: "Test Bank Dr.Ahmed ",
+          type: "file",
+          content: "./pdfs/Puplic/Test Bank Dr.Ahmed (Public Loans + State Budget).pdf",
         },
       ],
     ],
