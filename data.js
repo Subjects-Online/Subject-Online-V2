@@ -1727,7 +1727,7 @@ const CONTENT = {
           id: "lec2",
           title: "Test Bank Dr.Ahmed ",
           type: "file",
-          content: "./pdfs/Puplic/Test Bank Dr.Ahmed (Public Loans + State Budget).pdf",
+          content: "./pdfs/Puplic/Test Bank Dr.Ahmed.pdf",
         },
       ],
     ],
