@@ -1625,6 +1625,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/Puplic/Lect 7-8-9 Part 2 (Public) (S.O V2).pdf",
         },
+        {
+          id: "lec8",
+          title: "State budget Dr.Ahmed",
+          type: "file",
+          content: "./pdfs/Puplic/State Budget Part 2 (S.O).pdf",
+        },
       ],
     ],
     videos: [
