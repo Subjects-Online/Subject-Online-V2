@@ -1665,6 +1665,12 @@ const CONTENT = {
           type: "video",
           content: "./pdfs/Puplic/Public loans first pdf part 2 19 page.mp4",
         },
+        {
+          id: "vid7",
+          title: "Part Dr.Ahmed",
+          type: "video",
+          content: "./pdfs/Puplic/Part Dr.Ahmed.mp4",
+        },
       ],
     ],
     sections: [
