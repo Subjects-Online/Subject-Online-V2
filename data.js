@@ -1749,6 +1749,16 @@ const CONTENT = {
         },
       ],
     ],
+    quizzes:[
+      [
+        {
+          id: "lec1",
+          title: "quiz 1 Dr.Ahmed ",
+          type: "file",
+          content: "./pdfs/Puplic/Quiz (part 2) public.pdf",
+        },
+      ]
+    ]
   },
 };
 
