@@ -1699,7 +1699,7 @@ const CONTENT = {
       [
 {
           id: "lec1",
-          title: "فاينل البابلك ",
+          title: "فاينل البابلك 2024",
           type: "file",
           content:
             "./pdfs/Puplic/فاينل البابلك.pdf",
