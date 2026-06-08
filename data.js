@@ -662,10 +662,16 @@ const CONTENT = {
           content: "./pdfs/economics/Eco Quiz1.pdf",
         },
         {
-          id: "lec1",
+          id: "lec2",
           title: "Quiz 2",
           type: "file",
           content: "./pdfs/economics/Eco Quiz2.pdf",
+        },
+        {
+          id: "lec3",
+          title: "Quiz 1 part 2 ",
+          type: "file",
+          content: "./pdfs/economics/كويز ايكو بارت ٢.pdf",
         },
       ],
       [], // Chapter 2
