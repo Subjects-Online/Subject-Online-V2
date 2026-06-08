@@ -1695,6 +1695,17 @@ const CONTENT = {
         },
       ],
     ],
+    qa:[
+      [
+{
+          id: "lec1",
+          title: "فاينل البابلك ",
+          type: "file",
+          content:
+            "./pdfs/Puplic/فاينل البابلك.pdf",
+        },
+      ]
+    ],
     sections: [
       [
         {
