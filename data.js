@@ -691,6 +691,16 @@ const CONTENT = {
       [], // Chapter 2
       [], // Chapter 3
     ],
+    qa:[
+      [
+         {
+          id: "lec1",
+          title: "Test bank Dr.Hanan",
+          type: "file",
+          content: "./pdfs/economics/Micro testbank2026_(IM).pdf",
+        },
+      ]
+    ]
   },
   //-------------------------------------------------------------
   english: {
