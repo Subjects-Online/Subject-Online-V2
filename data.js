@@ -550,6 +550,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Lect 7 Eco Part 2 (S.O V2).pdf",
         },
+        {
+          id: "lec9",
+          title: "Lect 9 Part 2 Dr.Eman",
+          type: "file",
+          content: "./pdfs/economics/Lect 9 Eco Part 2 (S.O).pdf",
+        },
       ], // Chapter 3
     ],
     videos: [
