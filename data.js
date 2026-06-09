@@ -1636,6 +1636,12 @@ const CONTENT = {
           content: "./pdfs/Puplic/Lect 6 (Public) (S.O V2).pdf",
         },
         {
+          id: "lec6",
+          title: "Lect 6 Dr.Abeer",
+          type: "file",
+          content: "./pdfs/Puplic/Lect 6 Dr.Abeer (S.O).pdf",
+        },
+        {
           id: "lec7",
           title: "Lect 7-8-9 Dr.Ahmed",
           type: "file",
@@ -1789,6 +1795,21 @@ const CONTENT = {
           content:
             "./pdfs/Puplic/فاينل البابلك.pdf",
         },
+        {
+          id: "lec2",
+          title: "10 Theoretical parts on Dr.Abeer",
+          type: "file",
+          content:
+            "./pdfs/Puplic/Theoretical parts in 10 points Dr.Abeer (S.O).pdf",
+        },
+        {
+          id: "lec3",
+          title: "10 Graphs on Dr.Abeer",
+          type: "file",
+          content:
+            "./pdfs/Puplic/10 graphs on Dr.Abeer part (S.O).pdf",
+        },
+       
       ]
     ]
   },
