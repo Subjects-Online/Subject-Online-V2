@@ -1697,13 +1697,7 @@ const CONTENT = {
     ],
     qa:[
       [
-{
-          id: "lec1",
-          title: "فاينل البابلك 2024",
-          type: "file",
-          content:
-            "./pdfs/Puplic/فاينل البابلك.pdf",
-        },
+
       ]
     ],
     sections: [
@@ -1783,6 +1777,17 @@ const CONTENT = {
           title: "quiz 1 Dr.Ahmed ",
           type: "file",
           content: "./pdfs/Puplic/Quiz (part 2) public.pdf",
+        },
+      ]
+    ]
+    ,"final-review":[
+      [
+        {
+          id: "lec1",
+          title: "فاينل البابلك 2024",
+          type: "file",
+          content:
+            "./pdfs/Puplic/فاينل البابلك.pdf",
         },
       ]
     ]
