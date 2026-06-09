@@ -1779,6 +1779,18 @@ const CONTENT = {
     quizzes:[
       [
         {
+          id: "lec2",
+          title: "quiz 1 Dr.Abeer ",
+          type: "file",
+          content: "./pdfs/Puplic/public finance quiz 1 .pdf",
+        },
+         {
+          id: "lec3",
+          title: "quiz 2 Dr.Abeer ",
+          type: "file",
+          content: "./pdfs/Puplic/Public finance quiz 2 .pdf",
+        },
+        {
           id: "lec1",
           title: "quiz 1 Dr.Ahmed ",
           type: "file",
