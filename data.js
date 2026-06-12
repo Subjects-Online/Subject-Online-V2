@@ -727,6 +727,22 @@ const CONTENT = {
       [], // Chapter 2
       [], // Chapter 3
     ],
+    "final-review":[
+      [
+ {
+          id: "lec1",
+          title: "Exam 2022 Dr.Hanan",
+          type: "file",
+          content: "./pdfs/economics/Exam 2022 Dr.Hanan.pdf",
+        },
+        {
+          id: "lec1",
+          title: "Exam 2023 Dr.Hanan",
+          type: "file",
+          content: "./pdfs/economics/Exam 2023 Dr.Hanan.pdf",
+        },
+      ]
+    ],
     qa:[
       [
          {
