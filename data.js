@@ -751,6 +751,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Micro testbank2026_(IM).pdf",
         },
+         {
+          id: "lec2",
+          title: "Soultions to Test bank Dr.Hanan",
+          type: "file",
+          content: "./pdfs/economics/Solutions to Test Bank Dr.Hanan (S.O).pdf",
+        },
       ]
     ]
   },
