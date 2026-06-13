@@ -562,6 +562,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/economics/Lect 10 Eco Part 2 (S.O).pdf",
         },
+         {
+          id: "lec12",
+          title: "Lect 12 Part 2 Dr.Eman",
+          type: "file",
+          content: "./pdfs/economics/Lect 12 Eco.pdf",
+        },
       ], // Chapter 3
     ],
     videos: [
