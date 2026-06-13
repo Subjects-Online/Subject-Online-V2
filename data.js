@@ -583,7 +583,7 @@ const CONTENT = {
           id: "vid3",
           title: "Ch1 Dr.Hannan",
           type: "video",
-          content: "./pdfs/economics/lect 3 .mp4",
+          content: "./pdfs/economics/Lect 3.mp4",
         },
       ],
       [
@@ -591,13 +591,13 @@ const CONTENT = {
           id: "vid4",
           title: "Lect 4 Dr.Hannan",
           type: "video",
-          content: "./pdfs/economics/Lect 4 (Eco) (S.O).mp4",
+          content: "./pdfs/economics/Lect 4.mp4",
         },
         {
           id: "vid4",
           title: "Lect 5 Dr.Hannan",
           type: "video",
-          content: "./pdfs/economics/Lect 5 (Eco) (S.O).mp4",
+          content: "./pdfs/economics/Lect 5 (Eco.) (S.O).mp4",
         },
         {
           id: "vid5",
