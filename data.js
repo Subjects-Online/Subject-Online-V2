@@ -963,6 +963,12 @@ const CONTENT = {
           type: "file",
           content: "./pdfs/political-science/Lect 9 (Political) (S.O V2).pdf",
         },
+        {
+          id: "pol10",
+          title: "Lect 10-11 Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Lect 10-11 political (SO).pdf",
+        },
       ],
     ],
     quizzes: [
@@ -1072,6 +1078,30 @@ const CONTENT = {
         },
       ],
     ],
+      "final-review":[
+      [
+      
+           {
+          id: "lec1",
+          title: "Comparison Tables and Key Words Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Comparison Tables and Key Words (SO).pdf",
+        },
+         {
+          id: "lec2",
+          title: "Grouped Summary Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Grouped Summary (SO).pdf",
+        },
+        {
+          id: "lec3",
+          title: "Names and Definitions (SO) Dr.Ashraf",
+          type: "file",
+          content: "./pdfs/political-science/Names and Definitions (SO).pdf",
+        },
+        
+      ]
+      ]
   },
   //-------------------------------------------------------------
   marketing: {
